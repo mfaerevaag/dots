@@ -1,0 +1,75 @@
+# .dotfile
+# mutt/mutt.symlink
+
+# MISC
+set sort = threads
+set sort_aux = date
+set pager_index_lines = 15
+set editor = vim
+#set editor = "emacs -nw"
+auto_view text/html
+
+
+# THEME
+source ~/.mutt/vombatidae.mutt
+
+
+# ACCOUNTS
+#folder-hook 'faerevaag' 'source ~/.mutt/account.faerevaag'
+# folder-hook 'google' 'source ~/.mutt/account.google'
+# folder-hook 'bitblueprint' 'source ~/.mutt/account.bitblueprint'
+
+source ~/.mutt/account.faerevaag
+source ~/.mutt/account.hushmail
+# source ~/.mutt/account.google
+
+
+# BINDINGS
+macro index <f2> '<change-folder>=INBOX<enter>'
+macro index <f3> '<change-folder>imaps://imap.gmail.com:993<enter>'
+
+# macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
+# macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/[Gmail]/Bin\"\n <delete-message>" "Gmail delete message"
+
+
+# CACHE
+set header_cache =~/.mutt/cache/headers
+set message_cachedir =~/.mutt/cache/bodies
+set certificate_file =~/.mutt/certificates
+
+
+# SECURING
+set move = no
+set imap_keepalive = 900
+set timeout=15
+
+
+
+
+
+
+#set imap_check_subscribed
+#set hostname = gmail.com
+#set mail_check = 120
+#set imap_keepalive = 300
+#set include
+#set sort = 'threads'
+#set sort_aux = 'reverse-last-date-received'
+#set auto_tag = yes
+#ignore "Authentication-Results:"
+#ignore "DomainKey-Signature:"
+#ignore "DKIM-Signature:"
+#hdr_order Date From To Cc
+#alternative_order text/plain text/html *
+#auto_view text/html
+#bind editor <Tab> complete-query
+#bind editor ^T complete
+#bind editor <space> noop
+
+# Gmail-style keyboard shortcuts
+#macro index,pager y "<enter-command>unset trash\n <delete-message>" "Gmail archive message"
+#macro index,pager d "<enter-command>set trash=\"imaps://imap.googlemail.com/[GMail]/Bin\"\n <delete-message>" "Gmail delete message"
+#macro index,pager gi "<change-folder>=INBOX<enter>" "Go to inbox"
+#macro index,pager ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+#macro index,pager gs "<change-folder>=[Gmail]/Starred<enter>" "Go to starred messages"
+#macro index,pager gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"

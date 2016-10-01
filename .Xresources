@@ -1,0 +1,50 @@
+! .dotfile
+! xorg/Xdefaults.symlink
+! author: mfaerevaag
+
+!! Colors
+#include ".config/colors/wombat"
+
+URxvt.depth:                32
+URxvt.geometry:             90x30
+!URxvt.transparent:          true
+URxvt.fading:               0
+URxvt.urgentOnBell:         true
+URxvt.visualBell:           true
+URxvt.loginShell:           true
+URxvt.saveLines:            4095
+URxvt.internalBorder:       3
+URxvt.lineSpace:            0
+
+!! Fonts
+!URxvt.allow_bold:          true
+urxvt.font:                 xft:DejaVu Sans Mono:style=Book:antialias=false:size=10, \
+                            xft:Source Code Pro:size=10, \
+                            xft:FreeSerif:style=Regular, \
+                            xft:unifont:style=Medium:antialias=false
+emacs.font:                 DejaVu Sans Mono 10
+
+!! Fix font space
+URxvt.letterSpace:          -1
+
+!! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+!! Perl extensions
+URxvt.perl-ext-common:      default,matcher,clipboard
+URxvt.matcher.button:       1
+URxvt.urlLauncher:          chromium
+
+!! Clipboard
+URxvt*keysym.M-c:           perl:clipboard:copy
+URxvt*keysym.M-v:           perl:clipboard:paste
+URxvt*keysym.M-C-v:         perl:clipboard:paste_escaped
+
+!! Cursor
+URxvt.cursorBlink:          true
+!URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+!! Pointer
+URxvt.pointerBlank:         true

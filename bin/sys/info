@@ -1,0 +1,35 @@
+#!/bin/env bash
+# sys info
+
+readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+readonly DEV=$1
+
+readonly RED='#e5786d'
+readonly YEL='#ffe161'
+readonly GRE='#cae682'
+
+
+# check arguments
+if [ "$#" -ne 1 ]
+then
+    echo "Usage: ${0} <device>"
+    exit 1
+fi
+
+# check if file exists and run
+if [ ! -e $DIR/$DEV ]
+then
+    echo "Device not found"
+    exit 1
+else
+    . $DIR/$DEV
+
+    IFS=$'\n' output=($(main))
+    RET=$?
+
+    echo "${PREFIX}${output[0]}"
+    echo "${output[0]}"
+    echo "${output[1]}"
+
+    exit $RET
+fi

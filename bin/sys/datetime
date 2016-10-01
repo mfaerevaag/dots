@@ -1,0 +1,8 @@
+#!/bin/env sh
+# sys info - datetime
+
+readonly PREFIX="🕐: "
+
+main() {
+    echo -e "$(date "+%d/%m %H:%M:%S")"
+}

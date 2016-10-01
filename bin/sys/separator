@@ -1,0 +1,8 @@
+#!/bin/env bash
+# sys info - separator
+
+readonly PREFIX=""
+
+main() {
+    echo -e "〉"
+}

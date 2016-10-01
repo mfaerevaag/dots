@@ -1,0 +1,22 @@
+#!/bin/env sh
+# sys info - pac
+
+# In /etc/cron.hourly:
+#!/bin/bash
+#pacman -Sy 1>/dev/null 2>&1
+
+readonly PREFIX="ᗧ•: "
+
+main() {
+    local pup="$(pacman -Qu | wc -l)"
+    local c
+
+    if (( "$pup" > 10 )); then
+        c=$RED
+    elif (( "$pup" > 0 )); then
+        c=$YEL
+    fi
+
+    echo -e "${pup}"
+    echo -e "${c}"
+}

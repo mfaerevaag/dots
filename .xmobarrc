@@ -1,0 +1,58 @@
+-- .dotfile
+-- xmonad/xmobarrc
+
+Config {
+  font = "-*-dejavu sans mono-medium-r-*-*-11-*-*-*-*-*-*-*"
+  , borderColor  = "black"
+  --, border       = BottomBM
+  , bgColor      = "#222222"
+  , fgColor      = "#bbbbbb"
+  , position     = Bottom
+  , lowerOnStart = True
+  , persistent   = False
+  , hideOnStart  = False
+  , commands     = [
+    Run Network "wlan0"
+    ["-L","0"
+    ,"-H","32"
+    ,"--high","red"
+    ] 10
+
+    , Run Wireless "wlan0"
+      ["-L","30"
+      ,"--low","red"
+      ] 50
+
+    , Run Cpu
+      ["-H","50"
+      ,"--high","red"
+      ] 50
+
+      --, Run Memory ["-t","Mem: <used>M"] 10
+
+    , Run Date "%d %b %H:%M:%S" "date" 10
+
+    -- , Run BatteryP ["BAT0"]
+    --   ["-t", "<acstatus>"
+    --   ,"-L", "25"
+    --   ,"-l", "red"
+    --   ,"--"
+    --   ,"-O", "Bat: <fc=green><left>%</fb>"
+    --   ,"-o", "Bat: <left>% (<timeleft>)"
+    --   ] 100
+
+      --, Run Volume "default" "Master" [] 10
+      --, DiskIO [("/", "<read> <write>"), ("sda1", "<total>")] [] 10
+      --, Run ThermalZone 0 ["-t","<id>: <temp>C"] 30
+
+    , Run StdinReader
+
+    , Run Com "sysinfo" ["vol"] "vol" 10
+    , Run Com "sysinfo" ["bat"] "bat" 50
+    , Run Com "sysinfo" ["ram"] "ram" 50
+    , Run Com "sysinfo" ["hdd"] "hdd" 50
+    ]
+  , sepChar      = "%"
+  , alignSep     = "}{"
+  , template     = "%StdinReader% }{ %cpu% | Ram: %ram% | Hdd: %hdd% | Vol: %vol% | %wlan0% %wlan0wi% | <fc=#5283d7>%date%</fc> | Bat: %bat% "
+  }

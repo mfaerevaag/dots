@@ -1,0 +1,25 @@
+# INFO
+set realname = "Markus Færevaag"
+set from = "markus@faerevaag.no"
+
+# PW
+set my_pw_faerevaag=`gnome-keyring-query get mutt_faerevaag`
+
+# IMAP
+set imap_user = "markus@faerevaag.no"
+set imap_pass = $my_pw_faerevaag
+
+# SMTP
+set smtp_url = smtp://markus@faerevaag.no@smtp.hushmail.com:587/
+set smtp_pass = $my_pw_faerevaag
+
+# FOLDERS
+set folder = "imaps://imap.hushmail.com:993"
+set spoolfile = "+INBOX"
+set postponed ="+DRAFTS"
+set record = "+SENT"
+# set trash = "Trash"
+# set any_label = "+[Google Mail]/any_label"
+
+# SIGN
+set signature="~/.mutt/signature.faerevaag"

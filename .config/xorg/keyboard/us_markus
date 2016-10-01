@@ -1,0 +1,12 @@
+default  partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+
+    include "us(mac)"
+    name[Group1]= "English (US) Markus";
+
+    key <TLDE> {	[     dollar,	section	]	};
+
+    key <LSGT> {	[     grave,	asciitilde	]	};
+
+    include "level3(ralt_switch)"
+};
