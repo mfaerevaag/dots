@@ -39,7 +39,7 @@ SpiderOakONE &
 conky &
 
 # wallpaper
-#feh --bg-scale ~/Pictures/wallpaper/haskell.png
+feh --bg-cener ~/pics/wallpaper/fisi_grey.jpg
 
 # window manager
 #exec $1
