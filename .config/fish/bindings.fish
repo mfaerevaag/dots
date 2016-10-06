@@ -20,17 +20,23 @@ function _bind_git_status -d "git status"
 end
 
 function _bind_ag -d "ag current command"
-  set -l cmd ag
+  commandline -i " | ag "
+end
 
-  if commandline -j|ag -v "$cmd *\$" >/dev/null
-    commandline -aj " | $cmd;"
-  end
+function _bind_ps -d "find process"
+  commandline -i "ps aux | ag "
 end
 
 function _bind_new_window -d "ag current command"
   set -l term urxvt
 
   eval "$term &"
+end
+
+function _bind_ls -d "ls current dir"
+    echo ''
+    ll
+    commandline -f repaint
 end
 
 function reload! -d "reload configs"
@@ -44,10 +50,11 @@ function reload! -d "reload configs"
 end
 
 function fish_user_key_bindings
-  bind \er reload! # reload config
-  bind \el 'echo ''; ll; commandline -f repaint;' # ls -l
-  bind \eg _bind_ag # ag
-  bind \et _bind_new_window # term
-  bind \ek _bind_git_status # git status
+  bind \er reload!
+  bind \el _bind_ls
+  bind \eg _bind_ag
+  bind \et _bind_new_window
+  bind \ek _bind_git_status
+  bind \ep _bind_ps
   bind \cl _bind_clear
 end
