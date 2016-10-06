@@ -1,0 +1,10 @@
+[Unit]
+Description=Dunst: lightweight and customizable notification daemon 
+After=xorg.target
+
+[Service]
+ExecStart=/usr/bin/dunst
+Restart=always
+
+[Install]
+WantedBy=default.target
