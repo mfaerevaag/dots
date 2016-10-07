@@ -39,7 +39,7 @@ SpiderOakONE &
 conky &
 
 # wallpaper
-feh --bg-cener ~/pics/wallpaper/fisi_grey.jpg
+feh --bg-center ~/pics/wallpaper/fisi_grey.jpg &
 
 # window manager
 #exec $1
