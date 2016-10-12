@@ -145,7 +145,7 @@
     icon_position = left
 
     # Paths to default icons.
-    icon_folders = /usr/share/icons/gnome/32x32/status/:/usr/share/icons/gnome/32x32/devices/:/usr/share/icons/gnome/32x32/apps/
+    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/:/usr/share/icons/gnome/16x16/apps/:/usr/share/icons/gnome/32x32/actions/
 
 [frame]
     width = 2
@@ -226,20 +226,16 @@
 #    appname = Pidgin
 #    summary = "*signed on*"
 #    urgency = low
-#
-#[signed_off]
-#    appname = Pidgin
-#    summary = *signed off*
-#    urgency = low
-#
-#[says]
-#    appname = Pidgin
-#    summary = *says*
-#    urgency = critical
-#
-#[twitter]
-#    appname = Pidgin
-#    summary = *twitter.com*
-#    urgency = normal
-#
-# vim: ft=cfg
+
+[mu4e]
+   summary = "*mu4e*"
+   new_icon = "/usr/share/icons/gnome/32x32/status/mail-unread.png"
+
+[rcirc]
+   summary = "*rcirc*"
+   new_icon = "/usr/share/icons/gnome/32x32/status/mail-unread.png"
+
+[spotify]
+   appname = "Spotify"
+   new_icon = "/home/markus/pics/icons/spotify.png"
+

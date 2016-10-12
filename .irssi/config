@@ -32,6 +32,14 @@ servers = (
     use_ssl = "yes";
     ssl_verify = "no";
     autoconnect = "no";
+  },
+  {
+    address = "irc.hackthissite.org";
+    chatnet = "hts";
+    port = "7000";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "no";
   }
 );
 
@@ -39,7 +47,6 @@ chatnets = {
   fn = {
     type = "IRC";
     nick = "slevin";
-    # autosendcmd = "/msg nickserv identify YOURPASSWORD; wait 2000";
   };
   sts = {
     type = "IRC";
@@ -49,18 +56,18 @@ chatnets = {
   anonops = {
     type = "IRC";
     nick = "seven";
-    # autosendcmd = "/msg nickserv identify YOURPASSWORD; wait 2000";
   };
   mozilla = {
     type = "IRC";
     nick = "slevin";
-    # autosendcmd = "/msg nickserv identify YOURPASSWORD; wait 2000";
+  };
+  hts = {
+    type = "IRC";
+    nick = "slevin";
   };
 };
 
-channels = (
-  { name = "#archlinux"; chatnet = "fn"; autojoin = "No"; }
-);
+channels = ( { name = "#archlinux"; chatnet = "fn"; autojoin = "No"; } );
 
 aliases = {
   J = "join";
@@ -225,13 +232,13 @@ statusbar = {
 };
 
 settings = {
-  core = {
+  core = { 
     real_name = "unknown";
     user_name = "unknown";
     nick = "slevin";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = {
+  "fe-common/core" = { 
     theme = "themes/solarized";
     hilight_color = "= %R";
   };
