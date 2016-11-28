@@ -35,11 +35,11 @@ xset r rate 250 30
 # other services/daemons
 #dropboxd &
 nm-applet &
-SpiderOakONE &
-conky &
+# SpiderOakONE &
 
 # wallpaper
-feh --bg-center ~/pics/wallpaper/fisi_grey.jpg &
+feh --bg-max ~/pics/wallpaper/arch_kiss.png &
+conky &
 
 # window manager
 #exec $1

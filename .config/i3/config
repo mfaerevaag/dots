@@ -85,10 +85,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+Shift+y floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+y focus mode_toggle
 
 # change focused container [ parent, child ]
 bindsym $mod+a focus parent
@@ -144,4 +144,7 @@ bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     #font pango:SourceCodePro, FontAwesome 10
     font pango:DejaVu Sans Mono 10
+    colors {
+        background #141415
+    }
 }

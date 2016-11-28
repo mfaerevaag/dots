@@ -4,7 +4,7 @@
 function mm -d "Quickly setup multiple monitors"
   set opt $argv[1]
   set orien ''
-  set stock 'eDP-1'
+  set stock 'eDP1'
 
   switch "$opt"
     case duplicate dup
@@ -32,21 +32,21 @@ function mm -d "Quickly setup multiple monitors"
     # custom tee
     case t
       xrandr --output DisplayPort-0 --off \
-      --output HDMI-0 --mode 1920x1200 --pos 0x0      --rotate normal \
-      --output HDMI-1 --mode 1920x1200 --pos 1920x0   --rotate normal \
+      --output HDMI0 --mode 1920x1200 --pos 0x0      --rotate normal \
+      --output HDMI1 --mode 1920x1200 --pos 1920x0   --rotate normal \
       --output eDP-0  --mode 1920x1080 --pos 928x1200 --rotate normal
       return
 
     # custom dual
     case d
       xrandr --output $stock --off \
-      --output HDMI-2 --mode 1920x1200 --pos 0x0    --rotate normal \
-      --output HDMI-1 --mode 1920x1200 --pos 1920x0 --rotate normal
+      --output HDMI2 --mode 1920x1200 --pos 0x0    --rotate normal \
+      --output HDMI1 --mode 1920x1200 --pos 1920x0 --rotate normal
       return
 
     # custom single
     case s
-      xrandr --output $stock --off --output HDMI-1 --auto
+      xrandr --output $stock --off --output HDMI1 --auto
       return
 
     case '*'
