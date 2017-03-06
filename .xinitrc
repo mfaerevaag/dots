@@ -25,7 +25,8 @@ fi
 xbindkeys &
 xss-lock slock &
 #sh ~/.synaptics &
-xflux -l 55.43 -g 12.26 -k 3500 &
+#xflux -l 55.43 -g 12.26 -k 3500 & # copenhagen
+xflux -l 36.350412 -g 127.384548 -k 3500 & # daejeon
 xset r rate 250 30
 
 # asus
@@ -38,7 +39,7 @@ nm-applet &
 # SpiderOakONE &
 
 # wallpaper
-feh --bg-max ~/pics/wallpaper/arch_kiss.png &
+feh --bg-scale ~/pics/wallpaper/arch_kiss.png &
 conky &
 
 # window manager

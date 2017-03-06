@@ -14,8 +14,7 @@ set -x LANGUAGE "en_US.UTF-8"
 set -x SSH_AUTH_SOCK "$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # theme
-source $FISH/themes/robby-russel.fish
-#source $FISH/themes/bobthefish/fish_prompt.fish
+source $FISH/themes/bobthefish/fish_prompt.fish
 
 # greeting
 source $FISH/greeting.fish
