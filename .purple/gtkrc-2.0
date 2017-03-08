@@ -343,7 +343,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = NORMAL
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-unchecked.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-unchecked.svg"
  overlay_stretch = FALSE
  }
 
@@ -352,7 +352,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-unchecked.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-unchecked.svg"
  overlay_stretch = FALSE
  }
 
@@ -361,7 +361,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = ACTIVE
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-unchecked.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-unchecked.svg"
  overlay_stretch = FALSE
  }
 
@@ -370,7 +370,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = INSENSITIVE
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-unchecked-insensitive.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-unchecked-insensitive.svg"
  overlay_stretch = FALSE
  }
 
@@ -379,7 +379,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = NORMAL
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-checked.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-checked.svg"
  overlay_stretch = FALSE
  }
 
@@ -388,7 +388,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-checked.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-checked.svg"
  overlay_stretch = FALSE
  }
 
@@ -397,7 +397,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = ACTIVE
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-checked.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-checked.svg"
  overlay_stretch = FALSE
  }
 
@@ -407,7 +407,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = INSENSITIVE
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/checkbox-checked-insensitive.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/checkbox-checked-insensitive.svg"
  overlay_stretch = FALSE
  }
 
@@ -415,7 +415,7 @@ style "checkbutton" {
  function = FLAT_BOX
  recolorable = TRUE
  stretch = TRUE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/null.png"
+ file = "gtk-2.0-adwaita-dark/pixmap/null.png"
  border = {2, 2, 2, 2}
  }
 
@@ -424,7 +424,7 @@ style "checkbutton" {
  {
  function = FOCUS
  recolorable = TRUE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-focus.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-focus.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -433,7 +433,7 @@ style "checkbutton" {
  function = BOX
  recolorable = TRUE
  detail = "buttondefault"
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/null.png"
+ file = "gtk-2.0-adwaita-dark/pixmap/null.png"
  border = { 0, 0, 0, 0}
  stretch = TRUE
  }
@@ -442,7 +442,7 @@ style "checkbutton" {
  function = BOX
  state = NORMAL
  recolorable = TRUE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-normal.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-normal.svg"
  border ={ 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -452,7 +452,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = OUT
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-prelight.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-prelight.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -462,7 +462,7 @@ style "checkbutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = IN
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-pressed-prelight.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-pressed-prelight.svg"
  border = { 9, 9, 7, 9}
  stretch = TRUE
  }
@@ -471,7 +471,7 @@ style "checkbutton" {
  function = BOX
  state = INSENSITIVE
  shadow = OUT
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-inactive.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-inactive.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -480,7 +480,7 @@ style "checkbutton" {
  function = BOX
  state = INSENSITIVE
  shadow = IN
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-inactive.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-inactive.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -488,7 +488,7 @@ style "checkbutton" {
  {
  function = BOX
  state = ACTIVE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-pressed.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-pressed.svg"
  border = { 9, 9, 7, 9}
  stretch = TRUE
  }
@@ -503,7 +503,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = NORMAL
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-unselected.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-unselected.svg"
  overlay_stretch = FALSE
  }
 
@@ -512,7 +512,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-unselected.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-unselected.svg"
  overlay_stretch = FALSE
  }
 
@@ -521,7 +521,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = ACTIVE
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-unselected.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-unselected.svg"
  overlay_stretch = FALSE
  }
 
@@ -530,7 +530,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = INSENSITIVE
  shadow = OUT
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-unselected-insensitive.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-unselected-insensitive.svg"
  overlay_stretch = FALSE
  }
 
@@ -539,7 +539,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = NORMAL
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-selected.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-selected.svg"
  overlay_stretch = FALSE
  }
 
@@ -548,7 +548,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-selected.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-selected.svg"
  overlay_stretch = FALSE
  }
 
@@ -557,7 +557,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = ACTIVE
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-selected.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-selected.svg"
  overlay_stretch = FALSE
  }
 
@@ -567,7 +567,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = INSENSITIVE
  shadow = IN
- overlay_file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/radio-selected-insensitive.svg"
+ overlay_file = "gtk-2.0-adwaita-dark/pixmap/radio-selected-insensitive.svg"
  overlay_stretch = FALSE
  }
 
@@ -575,7 +575,7 @@ style "radiobutton" {
  function = FLAT_BOX
  recolorable = TRUE
  stretch = TRUE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/null.png"
+ file = "gtk-2.0-adwaita-dark/pixmap/null.png"
  border = {2, 2, 2, 2}
  }
 
@@ -584,7 +584,7 @@ style "radiobutton" {
  {
  function = FOCUS
  recolorable = TRUE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-focus.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-focus.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -593,7 +593,7 @@ style "radiobutton" {
  function = BOX
  recolorable = TRUE
  detail = "buttondefault"
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/null.png"
+ file = "gtk-2.0-adwaita-dark/pixmap/null.png"
  border = { 0, 0, 0, 0}
  stretch = TRUE
  }
@@ -602,7 +602,7 @@ style "radiobutton" {
  function = BOX
  state = NORMAL
  recolorable = TRUE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-normal.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-normal.svg"
  border ={ 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -612,7 +612,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = OUT
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-prelight.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-prelight.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -622,7 +622,7 @@ style "radiobutton" {
  recolorable = TRUE
  state = PRELIGHT
  shadow = IN
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-pressed-prelight.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-pressed-prelight.svg"
  border = { 9, 9, 7, 9}
  stretch = TRUE
  }
@@ -631,7 +631,7 @@ style "radiobutton" {
  function = BOX
  state = INSENSITIVE
  shadow = OUT
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-inactive.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-inactive.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -640,7 +640,7 @@ style "radiobutton" {
  function = BOX
  state = INSENSITIVE
  shadow = IN
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-inactive.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-inactive.svg"
  border = { 9, 9, 6, 9}
  stretch = TRUE
  }
@@ -648,7 +648,7 @@ style "radiobutton" {
  {
  function = BOX
  state = ACTIVE
- file = "Adwaita-dark-gtk2/gtk-2.0/pixmap/button-pressed.svg"
+ file = "gtk-2.0-adwaita-dark/pixmap/button-pressed.svg"
  border = { 9, 9, 7, 9}
  stretch = TRUE
  }
@@ -723,7 +723,7 @@ style "murrine-toolseparator" {
 	engine "pixmap" {
 		image {
 			function	= BOX
-			file		= "Adwaita-dark-gtk2/gtk-2.0/pixmap/null.png"
+			file		= "gtk-2.0-adwaita-dark/pixmap/null.png"
 			border		= { 2, 2, 2, 2 }
 			stretch		= TRUE
     		}
@@ -741,6 +741,6 @@ widget "*OOoFixed*"			        style "performance-fix" # Openoffice/Libreoffice
 widget_class "*MozContainer*"		style "performance-fix" # Firefox (Not sure if this one does anything though.)
 
 ### EXTERNAL FILES ###
-include "Adwaita-dark-gtk2/gtk-2.0/xfce.rc"
-include "Adwaita-dark-gtk2/gtk-2.0/menubar.rc"
-include "Adwaita-dark-gtk2/gtk-2.0/chrome.rc"
+include "gtk-2.0-adwaita-dark/xfce.rc"
+include "gtk-2.0-adwaita-dark/menubar.rc"
+include "gtk-2.0-adwaita-dark/chrome.rc"

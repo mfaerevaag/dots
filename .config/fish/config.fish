@@ -6,6 +6,8 @@ set -U FISH (dirname (status -f))
 set -x EDITOR "emc"
 set -x BROWSER "firefox"
 set -x DESKTOP_SESSION "i3"
+set -x GTK2_RC_FILES "/usr/share/themes/Adwaita-dark-gtk2/gtk-2.0/gtkrc" # gtk-2.0
+set -x GTK_THEME "Adwaita:dark" # gtk-3.0
 
 set -x LC_ALL "en_US.UTF-8"
 set -x LANG "en_US.UTF-8"
