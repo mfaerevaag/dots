@@ -1,0 +1,50 @@
+gtk-font-name = "Deja Vu Sans Mono 10"
+
+gtk-key-theme-name = "Emacs"
+
+style "purplerc_style"
+{
+    font_name = "Deja Vu Sans Mono 10"
+
+    base[NORMAL] = "#1C1C1C"
+    text[NORMAL] = "#D3D3D3"
+
+    GtkIMHtml::hyperlink-color    = "#00FFFF"
+    GtkIMHtml::send-name-color    = "#EFEF8F"
+    GtkIMHtml::receive-name-color = "#CC9393"
+
+    #GtkWidget::cursor-color="#60AFFE"
+    #GtkWidget::secondary-cursor-color="#A4D3EE"
+}
+
+style "my-blist" {
+    font_name = "Deja Vu Sans Mono 10"
+
+    text[SELECTED] = "#EEEEFF"
+    text[NORMAL]   = "#D3D3D3"
+    bg[SELECTED]   = "#000000"
+    base[NORMAL]   = "#1C1C1C"
+    base[SELECTED] = "#000000"
+}
+
+style "int_style"
+{
+    base[NORMAL] = "#1C1C1C"
+    text[NORMAL] = "#D3D3D3"
+
+    GtkIMHtml::hyperlink-color    = "#00FFFF"
+
+    #GtkWidget::cursor-color="#60AFFE"
+    #GtkWidget::secondary-cursor-color="#A4D3EE"
+
+    fg[NORMAL]   = "#FFFFFF"
+    fg[ACTIVE]   = "#EEEEFF"
+    bg[NORMAL]   = "#494949"
+    bg[PRELIGHT] = "#494949"
+    bg[ACTIVE]   = "#1C1C1C"
+}
+
+widget_class "*" style "int_style"
+widget "*pidgin_conv_imhtml" style "purplerc_style"
+widget "*pidgin_conv_entry" style "purplerc_style"
+widget "*pidgin_blist_treeview" style "my-blist"
