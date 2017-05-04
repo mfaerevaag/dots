@@ -3,6 +3,12 @@
 
 readonly PREFIX="♪: "
 
+case $BLOCK_BUTTON in
+    3) amixer -q sset Master toggle ;;
+    4) amixer -q sset Master 8+ ;;
+    5) amixer -q sset Master 8- ;;
+esac
+
 main() {
     local info=$(amixer get Master)
     local level=$(echo ${info} | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
