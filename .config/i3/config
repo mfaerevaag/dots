@@ -70,7 +70,7 @@ bindsym $mod+v split v
 bindsym $mod+e layout toggle split
 
 # lock
-bindsym $mod+Shift+l exec "slock"
+bindsym --release $mod+Shift+l exec slock
 
 # volume
 bindsym $mod+period exec "amixer -q sset Master 8+"
