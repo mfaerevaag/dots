@@ -3,7 +3,7 @@
 ! author: mfaerevaag
 
 !! Colors
-#include ".config/colors/wombat"
+#include ".config/colors/wombat.x"
 
 URxvt.depth:                32
 URxvt.geometry:             90x30
@@ -32,9 +32,9 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 !! Perl extensions
-URxvt.perl-ext-common:      default,matcher,clipboard
+URxvt.perl-ext-common:      default,matcher,clipboard,font-size
 URxvt.matcher.button:       1
-URxvt.urlLauncher:          chromium
+URxvt.urlLauncher:          firefox
 
 !! Clipboard
 URxvt*keysym.M-c:           perl:clipboard:copy
@@ -53,3 +53,12 @@ URxvt.pointerBlank:         true
 URxvt.colorIT:      #87af5f
 URxvt.colorBD:      #d7d7d7
 URxvt.colorUL:      #87afd7
+
+!! font-size bindings
+URxvt.font-step:    10
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-equal:  perl:font-size:reset
+URxvt.keysym.C-slash:  perl:font-size:show

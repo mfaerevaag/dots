@@ -61,7 +61,7 @@ $font${top_mem name 4}${alignr}${top mem 4} %
 $font${top_mem name 5}${alignr}${top mem 5} %
 
 ${font sans-serif:bold:size=8}NETWORK ${hr 2}
-${font sans-serif:normal:size=8}External IP: ${alignr}${texeci 3600 wget http://checkip.dyndns.org -O – -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}
+# ${font sans-serif:normal:size=8}External IP: ${alignr}${texeci 3600 wget http://checkip.dyndns.org -O – -o /dev/null | cut -d : -f 2 | cut -d \< -f 1}
 Local IP: $alignr ${addr wlan0}
 SSID: $alignr ${wireless_essid wlan0}
 Quality: $alignr ${wireless_link_qual_perc wlan0}%
