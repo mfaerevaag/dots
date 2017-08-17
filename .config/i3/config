@@ -75,7 +75,7 @@ bindsym --release $mod+Shift+l exec slock
 # volume
 bindsym $mod+period exec "amixer -q sset Master 8+"
 bindsym $mod+comma exec "amixer -q sset Master 8-"
-bindsym $mod+m exec "amixer -q sset Master toggle"
+bindsym $mod+m exec "amixer -D pulse set Master 1+ toggle"
 
 # enter fullscreen mode for the focused container
 bindsym $mod+q fullscreen
