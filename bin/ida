@@ -1,0 +1,2 @@
+#!/bin/bash
+env TERM=xterm /usr/bin/idal64 $@
