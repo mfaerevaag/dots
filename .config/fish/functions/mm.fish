@@ -40,8 +40,8 @@ function mm -d "Quickly setup multiple monitors"
     # custom dual
     case d
       xrandr --output $stock --off \
-      --output HDMI2 --mode 1920x1200 --pos 0x0    --rotate normal \
-      --output HDMI1 --mode 1920x1200 --pos 1920x0 --rotate normal
+      --output DP1   --mode 1920x1080 --pos 1920x0 --rotate normal \
+      --output HDMI2 --mode 1920x1080 --pos 0x0    --rotate normal
       return
 
     # custom single

@@ -2,7 +2,6 @@ usb:/mnt/usb
 nas:/mnt/nas
 docs:/home/markus/docs
 code:/home/markus/dev/code
-bbp:/home/markus/dev/code/bbp
 hive:/home/markus/SpiderOak Hive
 rb:/home/markus/dev/code/ruby
 rails:/home/markus/dev/code/ruby/rails
@@ -10,9 +9,7 @@ py:/home/markus/dev/code/python
 st:/home/markus/dev/code/smalltalk
 js:/home/markus/dev/code/js
 c:/home/markus/dev/code/c
-a:/home/markus/dev/code/a
 rs:/home/markus/dev/code/rust
-fenix:/home/markus/dev/code/fenix
 s:/home/markus/docs/school
 tmp:/home/markus/tmp
 org:/home/markus/org
@@ -26,3 +23,15 @@ fts:/home/markus/dev/code/fts
 imp:/home/markus/docs/important
 softsec:/home/markus/dev/code/softsec_lab
 infosec:/home/markus/dev/code/infosec
+papers:/home/markus/dev/papers
+lab:/home/markus/dev/code/infosec/lab-activities
+llvm:/home/markus/dev/code/llvm
+ctf:/home/markus/dev/code/infosec/lab-activities/ctf
+web:/home/markus/dev/code/web
+down:/home/markus/down
+dev:/home/markus/dev
+hs:/home/markus/dev/code/haskell
+adv-infosec:/home/markus/docs/school/CS548-advanced-infosec
+compiler:/home/markus/docs/school/CS420-compiler
+pics:/home/markus/pics
+pl:/home/markus/docs/school/CS520-theory-pl1
