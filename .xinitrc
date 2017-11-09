@@ -39,8 +39,8 @@ nm-applet &
 # SpiderOakONE &
 
 # wallpaper
-feh --bg-scale ~/pics/wallpaper/arch_kiss.png &
-conky &
+feh --bg-scale ~/pics/wallpaper/arch_kiss.png
+# conky &
 
 # window manager
 #exec $1
