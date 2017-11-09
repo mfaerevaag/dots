@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+case $BLOCK_BUTTON in
+    3) amixer -q sset Master toggle ;;
+    4) amixer -q sset Master 8+ ;;
+    5) amixer -q sset Master 8- ;;
+esac
+
+main() {
+    local prefix="♪ "
+
+    local info=$(amixer get Master)
+    local level=$(echo ${info} | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
+    local state=$(echo ${info} | tail -1 | sed 's/.*\[\(on\|off\)\].*/\1/')
+
+    local s
+    local c
+    if [[ "$state" == "off" ]]; then
+        s="-"
+        c=$YEL
+    else
+        s="${level}"
+    fi
+
+    echo -e " ${prefix}${s} "
+    # echo -e "${c}"
+}

@@ -1,0 +1,5 @@
+#!/usr/bin/bash
+
+main() {
+    echo -e ""
+}

@@ -1,0 +1,26 @@
+#!/bin/env bash
+# sys info - ethernet
+
+main() {
+    local iw=$(ifconfig)
+    local regex='ESSID:"(.+)".*Quality=(.*)\/'
+    [[ $iw =~ $regex ]]
+
+    local essid="${BASH_REMATCH[1]}"
+    local qual="${BASH_REMATCH[2]}"
+
+    local s
+    local c
+
+    if [[ $essid == "" ]]; then
+        s="-"
+        c=$RED
+    else
+        # s="${essid} ${qual}"
+        s="+"
+        c=$GRE
+    fi
+
+    echo -e " ${s} "
+    # echo -e "${c}"
+}

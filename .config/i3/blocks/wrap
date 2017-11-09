@@ -1,0 +1,47 @@
+#!/usr/bin/bash
+
+readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+readonly DEV=$1
+
+# readonly RED='#e5786d'
+# readonly YEL='#ffe161'
+# readonly GRE='#cae682'
+
+# check arguments
+if [[ -z "${DEV}" ]]
+then
+    echo "usage: ${0} <block> [fg_color] [bg_color]"
+    exit 1
+fi
+
+# foreground color
+FG="${2}"
+if [[ -z "${FG}" ]]
+then
+    FG="#aaaaaa"
+fi
+
+# background color
+BG="${3}"
+if [[ -z "${BG}" ]]
+then
+    BG="#161616"
+fi
+
+# check if file exists and run
+if [ ! -e $DIR/$DEV ]
+then
+    echo "block '$DEV' not found"
+    exit 1
+else
+    . $DIR/$DEV
+
+    IFS=$'\n' output=($(main))
+
+    if ! [[ -z "${output[1]}" ]]
+    then
+        BG="${output[1]}"
+    fi
+
+    echo -e "<span color='${FG}' bgcolor='${BG}'>${output[0]}</span>\n"
+fi

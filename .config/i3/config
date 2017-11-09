@@ -1,23 +1,25 @@
 # .dotfile
 # i3/config
 
-# i3 config file (v4)
-#
-# Please see http://i3wm.org/docs/userguide.html for a complete reference!
-
+# keys
 set $mod Mod4
 set $modAlt Mod1
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below. ISO 10646 = Unicode
+set $left h
+set $down j
+set $up k
+set $right l
+
+# font
+# will also be used by the bar unless a different font is set
 font pango:DejaVu Sans Mono 10
-#font pango:SourceCodePro, FontAwesome 10
 
 # window borders
-# new_window pixel 2
 # client.focused          #000000 #00AA00 #000000 #FF0000
-client.background #ffffff
-#  #151617
+# client.background #ffffff
+# hide title
+for_window [class="^.*"] border pixel 2
+new_window pixel 2
 
 # auto jump back to previous workspace
 workspace_auto_back_and_forth yes
@@ -27,124 +29,120 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec urxvt
-
 # start dmenu
 bindsym $mod+x exec dmenu_run
 
 # kill focused window
 bindsym $mod+Shift+w kill
-
 # reload the configuration file
 bindsym $mod+Shift+e reload
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+q exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Exit' 'i3-msg exit'"
 
-# audio keys
-# bindsym XF86AudioRaiseVolume exec amixer -q -D pulse sset Master 5%+ && killall -USR1 i3blocks
-# bindsym XF86AudioLowerVolume exec amixer -q -D pulse sset Master 5%- && killall -USR1 i3blocks
-# bindsym XF86AudioMute exec amixer set -D pulse Master toggle
-
-# brightness
-# bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-# bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-
 # change focus
-bindsym $mod+b focus left
-bindsym $mod+n focus down
-bindsym $mod+p focus up
-bindsym $mod+f focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # move focused window
-bindsym $mod+Shift+b move left
-bindsym $mod+Shift+n move down
-bindsym $mod+Shift+p move up
-bindsym $mod+Shift+f move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
-# change split oritenation [ horizontal, vertical, toggle ]
-bindsym $mod+h split h
+# split in horizontal orientation
+# bindsym $mod+h split h
+# split in vertical orientation
 bindsym $mod+v split v
-bindsym $mod+e layout toggle split
-
-# lock
-bindsym --release $mod+Shift+l exec slock
-
-# volume
-bindsym $mod+period exec "amixer -q sset Master 8+"
-bindsym $mod+comma exec "amixer -q sset Master 8-"
-bindsym $mod+m exec "amixer -D pulse set Master 1+ toggle"
 
 # enter fullscreen mode for the focused container
-bindsym $mod+q fullscreen
+bindsym $mod+f fullscreen toggle
 
-# change container layout [ stacked, tabbed ]
+# change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+y floating toggle
-
+bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
-bindsym $mod+y focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
-# change focused container [ parent, child ]
+# focus the parent container
 bindsym $mod+a focus parent
-bindsym $mod+d focus child
+# focus the child container
+#bindsym $mod+d focus child
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
 
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 1:일
+bindsym $mod+2 workspace 2:이
+bindsym $mod+3 workspace 3:삼
+bindsym $mod+4 workspace 4:사
+bindsym $mod+5 workspace 5:오
+bindsym $mod+6 workspace 6:육
+bindsym $mod+7 workspace 7:칠
+bindsym $mod+8 workspace 8:팔
+bindsym $mod+9 workspace 9:구
+bindsym $mod+0 workspace 10:십
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1:일
+bindsym $mod+Shift+2 move container to workspace 2:이
+bindsym $mod+Shift+3 move container to workspace 3:삼
+bindsym $mod+Shift+4 move container to workspace 4:사
+bindsym $mod+Shift+5 move container to workspace 5:오
+bindsym $mod+Shift+6 move container to workspace 6:육
+bindsym $mod+Shift+7 move container to workspace 7:칠
+bindsym $mod+Shift+8 move container to workspace 8:팔
+bindsym $mod+Shift+9 move container to workspace 9:구
+bindsym $mod+Shift+0 move container to workspace 10:십
 
 # move workspaces
-bindsym $mod+Shift+Ctrl+n move workspace to output down
-bindsym $mod+Shift+Ctrl+p move workspace to output up
-bindsym $mod+Shift+Ctrl+b move workspace to output left
-bindsym $mod+Shift+Ctrl+f move workspace to output right
+bindsym $mod+Shift+Ctrl+$left move workspace to output left
+bindsym $mod+Shift+Ctrl+$down move workspace to output down
+bindsym $mod+Shift+Ctrl+$up move workspace to output up
+bindsym $mod+Shift+Ctrl+$right move workspace to output right
 
-
-# resize window (you can also use the mouse for that)
+# resize window
 mode "resize" {
-        bindsym f resize shrink width 10 px or 10 ppt
-        bindsym p resize grow height 10 px or 10 ppt
-        bindsym n resize shrink height 10 px or 10 ppt
-        bindsym b resize grow width 10 px or 10 ppt
+        bindsym $left resize shrink width 10 px or 10 ppt
+        bindsym $down resize grow height 10 px or 10 ppt
+        bindsym $up resize shrink height 10 px or 10 ppt
+        bindsym $right resize grow width 10 px or 10 ppt
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-
 bindsym $mod+r mode "resize"
+
+# i3-gaps
+smart_gaps on
+smart_borders on
 
 # status bar
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    #font pango:SourceCodePro, FontAwesome 10
-    font pango:DejaVu Sans Mono 10
+
+    strip_workspace_numbers yes
+
+    # font pango:DejaVu Sans Mono 10
+    font pango:DejaVu Sans Mono for Powerline 10
+
     colors {
-        background #141415
+        background #222222
+        focused_workspace  #4c7899 #5283d7 #ffffff
     }
+
+    height 20
 }

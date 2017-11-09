@@ -1,0 +1,19 @@
+#!/bin/env sh
+# sys info - pac
+
+main() {
+    local cmd="$(nmcli c show --active | ag tun0)"
+    local s
+    local c
+
+    if [[ $cmd != "" ]]; then
+        c=$GRE
+        s="[+]"
+    else
+        c=$RED
+        s="[-]"
+    fi
+
+    echo -e "${s} "
+    # echo -e "${c}"
+}

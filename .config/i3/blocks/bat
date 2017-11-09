@@ -1,0 +1,32 @@
+#!/usr/bin/bash
+
+main() {
+    local prefix="⚡ "
+
+    local acpi=$(acpi -b)
+    local regex='Battery [0-9]: (.+), (.+)%, (.+) (remaining)?'
+    [[ $acpi =~ $regex ]]
+
+    local state="${BASH_REMATCH[1]}"
+    local pow="${BASH_REMATCH[2]}"
+    local time="${BASH_REMATCH[3]}"
+
+    local bat
+    local color
+
+    if [[ $state == "Discharging" ]]; then
+        if (( $pow < 10 )); then
+            color=$RED
+        elif (( $pow < 25 )); then
+            color=$YEL
+        fi
+
+        bat="-${pow}% (${time})"
+    else
+        bat="+${pow}%"
+        color=$GRE
+    fi
+
+    echo -e " ${prefix}${bat} "
+    # echo -e "${color}"
+}

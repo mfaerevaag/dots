@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+main() {
+    local total=$(free -m | awk '/Mem:/ { print $2 }')
+    local used=$(free -m | awk '/Mem:/ { print $3 }')
+    local perc=$(( ($used * 100) / $total ))
+    local c
+
+    if (( $used > 4000 )); then
+        c=$YEL
+    elif (( $used > 6000 )); then
+        c=$REd
+    fi
+
+    echo -e " ${perc}% ${used}M "
+    # echo -e "${c}"
+}
