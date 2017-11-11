@@ -23,7 +23,7 @@ fi
 
 # x programs
 xbindkeys &
-xss-lock slock &
+xss-lock i3lock.sh &
 #sh ~/.synaptics &
 #xflux -l 55.43 -g 12.26 -k 3500 & # copenhagen
 xflux -l 36.350412 -g 127.384548 -k 3500 & # daejeon

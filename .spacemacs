@@ -339,7 +339,7 @@ you should place your code here."
 
   ;; modes
   ;; (global-hl-line-mode)
-  (global-evil-mc-mode)
+  ;; (global-evil-mc-mode)
 
   ;; c-mode
   (setq c-basic-offset 4)
