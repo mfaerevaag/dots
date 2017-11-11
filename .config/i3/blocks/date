@@ -1,0 +1,10 @@
+#!/usr/bin/bash
+
+main() {
+    local prefix="<span font='FontAwesome'>\uf272</span> "
+    local value="$(date '+%d/%m')"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+
+    echo -e "${before}${text}${after}"
+}

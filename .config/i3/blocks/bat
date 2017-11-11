@@ -1,8 +1,7 @@
 #!/usr/bin/bash
 
 main() {
-    local prefix="⚡ "
-
+    # collect
     local acpi=$(acpi -b)
     local regex='Battery [0-9]: (.+), (.+)%, (.+) (remaining)?'
     [[ $acpi =~ $regex ]]
@@ -11,8 +10,12 @@ main() {
     local pow="${BASH_REMATCH[2]}"
     local time="${BASH_REMATCH[3]}"
 
-    local bat
-    local color
+    # format
+    local prefix="☇ "
+    # local prefix="⚡ "
+    local value
+    BG=$GRE
+    FG=$BLA
 
     if [[ $state == "Discharging" ]]; then
         if (( $pow < 10 )); then
@@ -21,12 +24,16 @@ main() {
             color=$YEL
         fi
 
-        bat="-${pow}% (${time})"
+        value="-${pow}% (${time})"
     else
-        bat="+${pow}%"
-        color=$GRE
+        value="+${pow}%"
     fi
 
-    echo -e " ${prefix}${bat} "
-    # echo -e "${color}"
+    #draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+
+    echo -e "${before}${text}${after}"
 }

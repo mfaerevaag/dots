@@ -7,21 +7,28 @@ case $BLOCK_BUTTON in
 esac
 
 main() {
-    local prefix="♪ "
-
+    # collect
     local info=$(amixer get Master)
     local level=$(echo ${info} | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
     local state=$(echo ${info} | tail -1 | sed 's/.*\[\(on\|off\)\].*/\1/')
 
-    local s
-    local c
+    # format
+    local prefix="♪ "
+    local value
+
     if [[ "$state" == "off" ]]; then
-        s="-"
-        c=$YEL
+        value="-"
+        BG=$YEL
+        FG=$BLA
     else
-        s="${level}"
+        value="${level}"
     fi
 
-    echo -e " ${prefix}${s} "
-    # echo -e "${c}"
+    #draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+
+    echo -e "${before}${text}${after}"
 }

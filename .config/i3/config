@@ -21,6 +21,10 @@ font pango:DejaVu Sans Mono 10
 for_window [class="^.*"] border pixel 2
 new_window pixel 2
 
+# i3-gaps
+smart_gaps on
+smart_borders on
+
 # auto jump back to previous workspace
 workspace_auto_back_and_forth yes
 
@@ -31,6 +35,13 @@ floating_modifier $mod
 bindsym $mod+Return exec urxvt
 # start dmenu
 bindsym $mod+x exec dmenu_run
+# lock
+bindsym --release $mod+Shift+o exec i3lock.sh
+# volume
+bindsym $mod+period exec "amixer -q sset Master 8+"
+bindsym $mod+comma exec "amixer -q sset Master 8-"
+bindsym $mod+m exec "amixer -D pulse set Master 1+ toggle"
+
 
 # kill focused window
 bindsym $mod+Shift+w kill
@@ -126,23 +137,18 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-# i3-gaps
-smart_gaps on
-smart_borders on
-
 # status bar
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 
     strip_workspace_numbers yes
-
     # font pango:DejaVu Sans Mono 10
     font pango:DejaVu Sans Mono for Powerline 10
 
+    # position top
+    height 20
     colors {
         background #222222
         focused_workspace  #4c7899 #5283d7 #ffffff
     }
-
-    height 20
 }

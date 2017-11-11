@@ -1,31 +1,31 @@
 #!/usr/bin/bash
 
+# powerline glyphs
+# 
+# 
+# 
+# 
+
 readonly DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 readonly DEV=$1
 
-# readonly RED='#e5786d'
-# readonly YEL='#ffe161'
-# readonly GRE='#cae682'
+readonly WHI='#f6f3e8'
+readonly GRA='#aaaaaa'
+readonly BLA='#222222'
+readonly RED='#e5786d'
+readonly YEL='#ffe161'
+readonly GRE='#cae682'
+readonly BLU='#5283d7'
+
+# default colors
+FG=$GRA
+BG=$BLA
 
 # check arguments
-if [[ -z "${DEV}" ]]
+if [ "$#" -ne 1 ]
 then
-    echo "usage: ${0} <block> [fg_color] [bg_color]"
+    echo "usage: ${0} <dev>"
     exit 1
-fi
-
-# foreground color
-FG="${2}"
-if [[ -z "${FG}" ]]
-then
-    FG="#aaaaaa"
-fi
-
-# background color
-BG="${3}"
-if [[ -z "${BG}" ]]
-then
-    BG="#161616"
 fi
 
 # check if file exists and run
@@ -36,12 +36,5 @@ then
 else
     . $DIR/$DEV
 
-    IFS=$'\n' output=($(main))
-
-    if ! [[ -z "${output[1]}" ]]
-    then
-        BG="${output[1]}"
-    fi
-
-    echo -e "<span color='${FG}' bgcolor='${BG}'>${output[0]}</span>\n"
+    echo -e "$(main)"
 fi

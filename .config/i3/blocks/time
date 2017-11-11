@@ -1,22 +1,16 @@
 #!/usr/bin/bash
 
-# In /etc/cron.hourly:
-#!/bin/bash
-#pacman -Sy 1>/dev/null 2>&1
-
 main() {
     # collect
-    local prefix="ᗧ• "
-    local value="$(pacman -Qu | wc -l)"
+    local value="$(date '+%H:%M:%S')"
 
     # format
-    if (( "$value" > 10 )); then
-        FG=$BLA
-        BG=$RED
-    elif (( "$value" > 0 )); then
-        FG=$BLA
-        BG=$YEL
-    fi
+    local prefix="<span font='FontAwesome'>\uf017</span> "
+    # local prefix="🕐 "
+    # local prefix="⧖ "
+
+    FG=$BLA
+    BG=$BLU
 
     # draw
     local before="<span color='${BG}' bgcolor='${BLA}'></span>"

@@ -1,17 +1,28 @@
 #!/usr/bin/bash
 
 main() {
+    # collect
     local total=$(free -m | awk '/Mem:/ { print $2 }')
     local used=$(free -m | awk '/Mem:/ { print $3 }')
     local perc=$(( ($used * 100) / $total ))
-    local c
 
+    # format
     if (( $used > 4000 )); then
-        c=$YEL
+        BG=$YEL
+        FG=$BLA
     elif (( $used > 6000 )); then
-        c=$REd
+        BG=$REd
+        FG=$BLA
     fi
 
-    echo -e " ${perc}% ${used}M "
-    # echo -e "${c}"
+    local prefix="<span font='FontAwesome'>\uf1b3</span> "
+    local value="${perc}% ${used}M"
+
+    # draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+
+    echo -e "${before}${text}${after}"
 }

@@ -1,7 +1,7 @@
-#!/bin/env bash
-# sys info - wifi
+#!/usr/bin/bash
 
 main() {
+    # network
     local iw=$(iwconfig)
     local regex='ESSID:"(.+)".*Quality=(.*)\/'
     [[ $iw =~ $regex ]]
@@ -9,17 +9,34 @@ main() {
     local essid="${BASH_REMATCH[1]}"
     local qual="${BASH_REMATCH[2]}"
 
-    local s
-    local c
+    # format
+    local prefix="<span font='FontAwesome'>\uf1eb</span> "
+    # local prefix="📶 "
+    local value
+    local vpn
+    local ip
 
     if [[ $essid == "" ]]; then
-        s="-"
-        c=$RED
+        value="-"
+        BG=$RED
+        FG=$BLA
     else
-        s="${essid} ${qual}"
-        c=$GRE
+        # vpn
+        if [[ "$(nmcli c show --active | ag tun0)" != "" ]]; then
+            vpn="[+]"
+        else
+            vpn="[-]"
+        fi
+
+        ip="$(curl 'ifconfig.me')"
+        value="${essid} ${qual} ${vpn} ${ip}"
     fi
 
-    echo -e " ${s} "
-    # echo -e "${c}"
+    # draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+
+    echo -e "${before}${text}${after}"
 }
