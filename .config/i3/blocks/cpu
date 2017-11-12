@@ -23,16 +23,16 @@ main() {
     if (( $temp > 80 )); then
         BG=$RED
         FG=$BLA
-    elif (( $temp > 60 )); then
+    elif (( $temp > 70 )); then
         BG=$YEL
         FG=$BLA
     fi
 
     # format
-    if (( $cpu > 75 )); then
+    if (( $cpu > 90 )); then
         BG=$RED
         FG=$BLA
-    elif (( $cpu > 50 )); then
+    elif (( $cpu > 75 )); then
         BG=$YEL
         FG=$BLA
     fi

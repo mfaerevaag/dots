@@ -12,6 +12,9 @@ main() {
             ;;
         "00001000"|"00001001"|"00001002")
             value="no"
+
+            BG=$MAG
+            FG=$BLA
             ;;
         *)
             value="?"
@@ -20,11 +23,11 @@ main() {
 
     value="${value} "
 
-    #draw
-    # local before="<span color='${BG}' bgcolor='${BLA}'></span>"
-    # local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+    # draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
 
-    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value}</span>"
 
     echo -e "${before}${text}${after}"
 }
