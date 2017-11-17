@@ -30,7 +30,7 @@ are included.")
 (let ((class '((class color) (min-colors 89))))
   (custom-theme-set-faces
    'wombat
-   `(default ((,class (:background "#161616" :foreground "#f6f3e8"))))
+   `(default ((,class (:background "#222222" :foreground "#f6f3e8"))))
    `(cursor ((,class (:background "#656565"))))
    ;; Highlighting faces
    `(fringe ((,class (:background "#303030"))))
