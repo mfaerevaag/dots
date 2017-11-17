@@ -7,10 +7,10 @@ main() {
     local perc=$(( ($used * 100) / $total ))
 
     # format
-    if (( $used > 4000 )); then
+    if (( $used > 6000 )); then
         BG=$YEL
         FG=$BLA
-    elif (( $used > 6000 )); then
+    elif (( $used > 7000 )); then
         BG=$REd
         FG=$BLA
     fi
