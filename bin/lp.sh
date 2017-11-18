@@ -1,8 +1,8 @@
 #!/bin/sh
 
 # login
-if not lpass status
-then lpass login m@frv.ag
+if not lpass status; then
+    lpass login m@frv.ag || exit
 fi
 
 # get alternatives
