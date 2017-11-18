@@ -53,15 +53,15 @@
   XF86KbdBrightnessUp
 
 #Mute sound
-"amixer -D pulse set Master 1+ toggle"
+"bin.sh toggle"
   XF86AudioMute
 
 #Sound down
-"amixer -q sset Master 8-"
+"bin.sh - 8"
   XF86AudioLowerVolume
 
 #Sound up
-"amixer -q sset Master 8+"
+"bin.sh + 8"
   XF86AudioRaiseVolume
 
 ##################################

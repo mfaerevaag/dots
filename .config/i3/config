@@ -38,9 +38,9 @@ bindsym $mod+x exec dmenu_run
 # lock
 bindsym --release $mod+Shift+o exec i3lock.sh
 # volume
-bindsym $mod+period exec "amixer -q sset Master 8+"
-bindsym $mod+comma exec "amixer -q sset Master 8-"
-bindsym $mod+m exec "amixer -D pulse set Master 1+ toggle"
+bindsym $mod+period exec "vol.sh + 8"
+bindsym $mod+comma exec "vol.sh - 8"
+bindsym $mod+m exec "vol.sh toggle"
 
 
 # kill focused window
