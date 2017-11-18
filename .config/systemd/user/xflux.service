@@ -1,11 +1,10 @@
 [Unit]
 Description=xflux
-After=graphical.target
 
 [Service]
-Type=forking
-ExecStart=/usr/bin/xflux -k 3500 -l 36.35 -g 127.38 # daejeon
+ExecStart=/usr/bin/xflux -k 3500 -l 36.35 -g 127.38 -nofork
+; ExecStart=/usr/bin/xflux -k 3500 -l 55.43 -g 12.26 -nofork # copenhagen
 Restart=always
 
 [Install]
-WantedBy=default.target
+WantedBy=window-manager.target

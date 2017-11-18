@@ -1,8 +1,8 @@
 [Unit]
-Description=dunst
+Description=Network Manager applet
 
 [Service]
-ExecStart=/usr/bin/dunst
+ExecStart=/usr/bin/nm-applet
 Restart=always
 
 [Install]

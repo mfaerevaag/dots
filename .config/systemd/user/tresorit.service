@@ -1,10 +1,9 @@
 [Unit]
 Description=tresorit
-After=graphical.target
 
 [Service]
 ExecStart=/home/markus/.local/share/tresorit/tresorit --hidden
 Restart=always
 
 [Install]
-WantedBy=default.target
+WantedBy=window-manager.target

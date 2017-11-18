@@ -1,0 +1,10 @@
+[Unit]
+Description=Wallpaper
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/home/markus/.fehbg
+
+[Install]
+WantedBy=window-manager.target

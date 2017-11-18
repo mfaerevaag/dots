@@ -153,3 +153,5 @@ bar {
         urgent_workspace  #4c7899 #e5786d #ffffff
     }
 }
+
+exec ~/bin/post-wm.sh
