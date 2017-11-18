@@ -170,7 +170,7 @@
     history = mod4+grave
 
     # Context menu.
-    context = mod4+shift+period
+    # context = mod4+shift+period
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
@@ -180,13 +180,13 @@
     timeout = 10
 
 [urgency_normal]
-    background = "#285577"
+    background = "#5283d7"
     foreground = "#ffffff"
     timeout = 10
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
+    background = "#e5786d"
+    foreground = "#222222"
     timeout = 0
 
 
@@ -237,4 +237,4 @@
 
 [spotify]
    appname = "Spotify"
-   new_icon = "/home/markus/pics/icons/spotify.png"
+   new_icon = "/usr/share/spotify/icons/spotify-linux-64.png"
