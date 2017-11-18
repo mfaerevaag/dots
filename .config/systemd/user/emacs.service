@@ -1,5 +1,6 @@
 [Unit]
-Description=Emacs: the extensible, self-documenting text editor
+Description=emacs
+After=graphical.target
 
 [Service]
 Type=forking

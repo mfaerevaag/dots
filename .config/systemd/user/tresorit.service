@@ -1,9 +1,9 @@
 [Unit]
-Description=Tresorit: Encrypted cloud storage for your confidential files.
+Description=tresorit
+After=graphical.target
 
 [Service]
 ExecStart=/home/markus/.local/share/tresorit/tresorit --hidden
-ExecReload=/bin/kill -HUP $MAINPID
 Restart=always
 
 [Install]

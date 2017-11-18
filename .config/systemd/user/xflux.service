@@ -1,0 +1,11 @@
+[Unit]
+Description=xflux
+After=graphical.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/xflux -k 3500 -l 36.35 -g 127.38 # daejeon
+Restart=always
+
+[Install]
+WantedBy=default.target
