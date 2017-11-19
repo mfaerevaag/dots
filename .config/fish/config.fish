@@ -47,12 +47,12 @@ set PATH $HOME/bin /usr/local/bin /usr/lib/node_modules $HOME/.cabal/bin $HOME/.
 
 # opam
 # source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-source /home/markus/.opam/opam-init/variables.fish > /dev/null 2> /dev/null; or true
-set -gx PATH "/Users/you/.opam/system/bin" $PATH;
-set -gx OCAML_TOPLEVEL_PATH "/home/markus/.opam/system/lib/toplevel";
-set -gx PERL5LIB "/home/markus/.opam/system/lib/perl5:$PERL5LIB";
-set -gx MANPATH $MANPATH "/Users/you/.opam/system/man";
-set -gx CAML_LD_LIBRARY_PATH "/home/markus/.opam/system/lib/stublibs:/usr/lib/ocaml/stublibs";
+# source /home/markus/.opam/opam-init/variables.fish > /dev/null 2> /dev/null; or true
+# set -gx PATH "/home/markus/.opam/system/bin" $PATH;
+# set -gx OCAML_TOPLEVEL_PATH "/home/markus/.opam/system/lib/toplevel";
+# set -gx PERL5LIB "/home/markus/.opam/system/lib/perl5:$PERL5LIB";
+# set -gx MANPATH $MANPATH "/home/markus/.opam/system/man";
+# set -gx CAML_LD_LIBRARY_PATH "/home/markus/.opam/system/lib/stublibs:/usr/lib/ocaml/stublibs";
 
 # python
 # status --is-interactive; and source (pyenv init -|psub)
