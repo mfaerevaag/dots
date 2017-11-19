@@ -1,5 +1,4 @@
 # .dotfile
-# mutt/mutt.symlink
 
 # MISC
 set sort = threads
@@ -11,16 +10,16 @@ auto_view text/html
 
 
 # THEME
-source ~/.mutt/vombatidae.mutt
+source ~/.config/mutt/vombatidae.mutt
 
 
 # ACCOUNTS
-#folder-hook 'faerevaag' 'source ~/.mutt/account.faerevaag'
-# folder-hook 'google' 'source ~/.mutt/account.google'
-# folder-hook 'bitblueprint' 'source ~/.mutt/account.bitblueprint'
+#folder-hook 'faerevaag' 'source ~/.config/mutt/account.faerevaag'
+# folder-hook 'google' 'source ~/.config/mutt/account.google'
+# folder-hook 'bitblueprint' 'source ~/.config/mutt/account.bitblueprint'
 
-source ~/.mutt/account.faerevaag
-# source ~/.mutt/account.google
+source ~/.config/mutt/account.faerevaag
+# source ~/.config/mutt/account.google
 
 
 # BINDINGS
@@ -28,9 +27,9 @@ macro index <f2> '<change-folder>=INBOX<enter>'
 
 
 # CACHE
-set header_cache     = ~/.mutt/cache/headers
-set message_cachedir = ~/.mutt/cache/bodies
-set certificate_file = ~/.mutt/certificates
+set header_cache     = ~/.config/mutt/cache/headers
+set message_cachedir = ~/.config/mutt/cache/bodies
+set certificate_file = ~/.config/mutt/certificates
 
 
 # SECURING
