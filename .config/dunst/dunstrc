@@ -160,13 +160,12 @@
 
     # Close notification.
     # close = mod4+space
+    close = mod4+shift+grave
 
     # Close all notifications.
     # close_all = mod4+shift+space
 
     # Redisplay last message(s).
-    # On the US keyboard layout "grave" is normally above TAB and left
-    # of "1".
     history = mod4+grave
 
     # Context menu.
