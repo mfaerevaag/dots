@@ -1,7 +1,8 @@
 dots
 ====
 
-My simple dotfile setup with bare git repo. I use own branch for each device.
+My simple dotfile setup with bare git repo, based of this [blog article](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/).
+
 
 ## Initial setup
 
