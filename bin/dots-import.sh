@@ -20,5 +20,7 @@ else
     dots checkout 2>&1 | egrep "\s+\." | awk {'print $1'} | xargs -I{} mv {} $BACKUP/{}
 fi;
 
+dots checkout
+
 # ignore untracked files
 dots config status.showUntrackedFiles no
