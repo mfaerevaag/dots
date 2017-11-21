@@ -1,9 +1,9 @@
 # .dotfile
 # fish - bindings
 
-function _bind_clear -d "clear and greet"
+function _bind_clear -d "clear"
     clear
-    fish_greeting
+    # fish_greeting
     commandline -f repaint
 end
 
