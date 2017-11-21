@@ -319,6 +319,9 @@ you should place your code here."
   ;; bug fix
   (require 'helm-bookmark)
 
+  ;; rainbow-mode per default
+  (add-hook 'prog-mode-hook 'rainbow-mode)
+
   ;; line
   ;; (global-hl-line-mode -1)
   (set-face-attribute hl-line-face nil :underline nil)
