@@ -33,18 +33,18 @@ set __bobthefish_superuser_glyph         '$ '
 set __bobthefish_bg_job_glyph            '% '
 
 # Colors
-set __bobthefish_lt_green   addc10
-set __bobthefish_med_green  189303
-set __bobthefish_dk_green   0c4801
+set __bobthefish_lt_green   cae682
+set __bobthefish_med_green  8bbe34
+set __bobthefish_dk_green   477d18
 
-set __bobthefish_lt_red     C99
-set __bobthefish_med_red    ce000f
+set __bobthefish_lt_red     e5786d
+set __bobthefish_med_red    9d2a3a
 set __bobthefish_dk_red     600
 
-set __bobthefish_slate_blue 255e87
+set __bobthefish_slate_blue 5283d7
 
-set __bobthefish_lt_orange  f6b117
-set __bobthefish_dk_orange  3a2a03
+set __bobthefish_lt_orange  ffe161
+set __bobthefish_dk_orange  ffaf00
 
 set __bobthefish_dk_grey    333
 set __bobthefish_med_grey   999
@@ -222,7 +222,7 @@ function __bobthefish_prompt_git -d 'Display the actual git state'
   else
     if test "$stashed"
       set flag_bg $__bobthefish_lt_orange
-      set flag_fg $__bobthefish_dk_orange
+      set flag_fg $__bobthefish_dk_grey
     end
   end
 
