@@ -1,0 +1,9 @@
+[Unit]
+Description=Redshift
+
+[Service]
+ExecStart=/usr/bin/redshift -l 55.43:12.26
+Restart=always
+
+[Install]
+WantedBy=window-manager.target
