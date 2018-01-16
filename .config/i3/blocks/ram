@@ -16,7 +16,7 @@ main() {
     fi
 
     local prefix="<span font='FontAwesome'>\uf1b3</span> "
-    local value="${perc}% ${used}M"
+    local value="${perc}% ${used}M/${total}M"
 
     # draw
     local before="<span color='${BG}' bgcolor='${BLA}'></span>"

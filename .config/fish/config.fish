@@ -36,23 +36,5 @@ source $FISH/aliases.fish
 # bindings
 source $FISH/bindings.fish
 
-# ssh-agent
-# source $FISH/ssh_agent.fish
-
-# PATH
-# set PYTHONPATH /usr/lib/python3.3/site-packages # python
-
-set PATH $HOME/bin /usr/local/bin /usr/lib/node_modules $HOME/.cabal/bin $HOME/.cargo/bin $PATH
-# type ruby > /dev/null; and set PATH (ruby -rubygems -e "puts Gem.user_dir")/bin $PATH
-
-# opam
-# source $HOME/.opam/opam-init/init.fish > /dev/null 2> /dev/null; or true
-# source /home/markus/.opam/opam-init/variables.fish > /dev/null 2> /dev/null; or true
-# set -gx PATH "/home/markus/.opam/system/bin" $PATH;
-# set -gx OCAML_TOPLEVEL_PATH "/home/markus/.opam/system/lib/toplevel";
-# set -gx PERL5LIB "/home/markus/.opam/system/lib/perl5:$PERL5LIB";
-# set -gx MANPATH $MANPATH "/home/markus/.opam/system/man";
-# set -gx CAML_LD_LIBRARY_PATH "/home/markus/.opam/system/lib/stublibs:/usr/lib/ocaml/stublibs";
-
-# python
-# status --is-interactive; and source (pyenv init -|psub)
+# path
+set PATH $HOME/bin /usr/local/bin /usr/local/sbin /usr/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl

@@ -2,9 +2,9 @@
 
 main() {
     # collect
-    local perc=$(df | awk '/\/dev\/sda2/ { print $5 }')
-    local used=$(df -h | awk '/\/dev\/sda2/ { print $3 }')
-    local total=$(df -h | awk '/\/dev\/sda2/ { print $2 }')
+    local perc=$(df | awk '/\/dev\/nvme0n1p2/ { print $5 }')
+    local used=$(df -h | awk '/\/dev\/nvme0n1p2/ { print $3 }')
+    local total=$(df -h | awk '/\/dev\/nvme0n1p2/ { print $2 }')
     local n="${perc%?}"
 
     local value="${prefix}${n}% ${used}/${total}"

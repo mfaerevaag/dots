@@ -19,7 +19,6 @@ if [ -s ~/.Xmodmap ]; then
 fi
 
 # x programs
-xbindkeys &
 xset r rate 250 30
 
 # window manager

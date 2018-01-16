@@ -93,7 +93,7 @@ echo -e "${before}${text}${after}"
 See the full thing in the `blocks/` subdir. Here, the `block/wrap` script
 includes the other scripts with some colors and setup code.
 
-This requires setting some [powerline patched
+This requires installing and setting some [powerline patched
 font](https://github.com/powerline/fonts) with pango:
 ```
 bar {

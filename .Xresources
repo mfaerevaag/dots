@@ -18,9 +18,8 @@ URxvt.lineSpace:            0
 
 !! Fonts
 !URxvt.allow_bold:          true
-urxvt.font:                 xft:DejaVu Sans Mono:style=Book:antialias=false:size=9, \
-                            xft:Source Code Pro:size=9
-emacs.font:                 DejaVu Sans Mono 9
+urxvt.font:                 xft:DejaVu Sans Mono for Powerline:pixelsize=13
+! emacs.font:                 DejaVu Sans Mono 9
 
 !! Fix font space
 URxvt.letterSpace:          -1

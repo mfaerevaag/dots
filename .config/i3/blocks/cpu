@@ -13,9 +13,9 @@ main() {
     cpu="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))"
 
     # temp
-    local temp=$(sensors | awk '/Package id 0/ { print $4 }')
-    temp=${temp:1}
-    temp=${temp%????}
+    # local temp=$(sensors | awk '/Package id 0/ { print $4 }')
+    # temp=${temp:1}
+    # temp=${temp%????}
 
     # format
     local prefix="<span font='FontAwesome'>\uf2db</span> "
@@ -37,7 +37,8 @@ main() {
         FG=$BLA
     fi
 
-    local value="${cpu}% ${temp}°C"
+    # local value="${cpu}% ${temp}°C"
+    local value="${cpu}%"
 
     # draw
     local before="<span color='${BG}' bgcolor='${BLA}'></span>"
