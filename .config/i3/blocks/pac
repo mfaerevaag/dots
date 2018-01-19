@@ -6,7 +6,7 @@
 
 main() {
     # collect
-    local prefix="ᗧ• "
+    local prefix="<span font='FontAwesome'>\uf17c</span> "
     local value="$(pacman -Qu | wc -l)"
 
     # format

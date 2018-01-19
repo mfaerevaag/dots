@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+
+main() {
+    # network
+    local ip=$(ip addr show enp5s0 | awk '/inet / { print $2 }')
+
+    # format
+    local prefix="<span font='FontAwesome'>\uf1eb</span> "
+
+    # draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${ip} </span>"
+
+    echo -e "${before}${text}${after}"
+}
