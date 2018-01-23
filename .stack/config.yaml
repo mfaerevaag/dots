@@ -10,5 +10,5 @@ templates:
   params:
    author-name: Markus Faerevaag
    author-email: m@frv.ag
-   # copyright:
-   github-username: MIT
+   github-username: mfaerevaag
+   copyright: MIT
