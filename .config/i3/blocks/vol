@@ -8,7 +8,7 @@ esac
 
 main() {
     # collect
-    local info=$(vol.sh get)
+    local info=$(vol.sh show)
     local level=$(echo ${info} | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
     local state=$(echo ${info} | tail -1 | sed 's/.*\[\(on\|off\)\].*/\1/')
 
