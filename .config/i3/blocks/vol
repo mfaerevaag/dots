@@ -1,14 +1,14 @@
 #!/usr/bin/bash
 
 case $BLOCK_BUTTON in
-    3) amixer -q sset Master toggle ;;
-    4) amixer -q sset Master 8+ ;;
-    5) amixer -q sset Master 8- ;;
+    3) vol.sh - 8 ;;
+    4) vol.sh + 8 ;;
+    5) vol.sh toggle ;;
 esac
 
 main() {
     # collect
-    local info=$(amixer get Master)
+    local info=$(vol.sh get)
     local level=$(echo ${info} | tail -1 | sed 's/.*\[\([0-9]*%\)\].*/\1/')
     local state=$(echo ${info} | tail -1 | sed 's/.*\[\(on\|off\)\].*/\1/')
 

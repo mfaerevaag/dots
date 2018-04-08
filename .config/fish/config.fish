@@ -37,4 +37,6 @@ source $FISH/aliases.fish
 source $FISH/bindings.fish
 
 # path
-set PATH $HOME/bin /usr/local/bin /usr/local/sbin /usr/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl
+# set PATH $HOME/bin $HOME/.local/bin /usr/local/bin /usr/local/sbin /usr/bin /usr/bin/site_perl /usr/bin/vendor_perl /usr/bin/core_perl
+# set -gx PATH $HOME/bin $HOME/.local/bin $PATH
+set -U fish_user_paths ~/bin ~/.local/bin
