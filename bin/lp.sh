@@ -1,7 +1,8 @@
 #!/bin/sh
 
 # login
-if not lpass status; then
+lpass status
+if [[ $? -ne 0 ]]; then
     lpass login m@frv.ag || exit
 fi
 
