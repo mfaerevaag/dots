@@ -1,0 +1,26 @@
+#!/usr/bin/bash
+
+main() {
+    # collect
+    local temp=$(sensors it8665-isa-0290 | awk '/temp1/ { print $2 }' | grep -oP '[\d]*\.[\d]*')
+
+    # format
+    local prefix="<span font='FontAwesome'>\uf2cb</span> "
+    local value="${temp}"
+
+    if [[ $temp -gt 60 ]]; then
+        BG=$YEL
+        FG=$BLA
+    elif [[ $temp -gt 80 ]]; then
+        BG=$RED
+        FG=$BLA
+    fi
+
+    #draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+
+    echo -e "${before}${text}${after}"
+}

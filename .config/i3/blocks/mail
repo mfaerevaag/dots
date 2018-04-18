@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+main() {
+    # collect
+    local new_dir="$HOME/mail/faerevaag/INBOX/new"
+    local num_mail=$(ls $new_dir | wc -l)
+
+    # format
+    local prefix="<span font='FontAwesome'>\uf0e0</span> "
+    local value
+
+    if [[ $num_mail -gt 0 ]]; then
+        value=$num_mail
+        BG=$RED
+        FG=$BLA
+    else
+        value="-"
+    fi
+
+    #draw
+    local before="<span color='${BG}' bgcolor='${BLA}'></span>"
+    local after="<span color='${BLA}' bgcolor='${BG}'></span>"
+
+    local text="<span color='${FG}' bgcolor='${BG}'> ${prefix}${value} </span>"
+
+    echo -e "${before}${text}${after}"
+}
