@@ -21,6 +21,9 @@ bindkey -e
 bindkey -s '\el' 'll\n'
 bindkey -s '\ek' 'git status\n'
 
+# zsh
+setopt histignoredups
+
 # theme
 # always use a theme except when TRAMP (Emacs) is used.
 if [[ $TERM == "dumb" ]]; then
