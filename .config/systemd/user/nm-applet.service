@@ -1,9 +1,0 @@
-[Unit]
-Description=Network Manager applet
-
-[Service]
-ExecStart=/usr/bin/nm-applet
-Restart=always
-
-[Install]
-WantedBy=window-manager.target

@@ -1,4 +1,0 @@
-#!/usr/bin/sh
-
-export EMACS_INIT=irc
-emacs

@@ -1,9 +1,0 @@
-[Unit]
-Description=dunst
-
-[Service]
-ExecStart=/usr/bin/dunst
-Restart=always
-
-[Install]
-WantedBy=window-manager.target
