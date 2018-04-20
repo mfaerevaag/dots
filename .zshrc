@@ -35,6 +35,8 @@ zplug "zsh-users/zsh-completions", from:github
 
 zplug "plugins/colored-man-pages", from:oh-my-zsh
 
+zplug "plugins/ssh-agent", from:oh-my-zsh
+
 zplug "plugins/git", from:oh-my-zsh
 
 zplug "zsh-users/zsh-syntax-highlighting", from:github, \
