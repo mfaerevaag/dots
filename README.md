@@ -1,7 +1,9 @@
 dots
 ====
 
-My simple dotfile setup with bare git repo, based of this [blog article](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/).
+My simple dotfile setup with bare git repo, based of [this blog article](https://developer.atlassian.com/blog/2016/02/best-way-to-store-dotfiles-git-bare-repo/).
+
+I keep a separate branch for each device.
 
 
 ## Initial setup
@@ -38,10 +40,7 @@ end
 ## Migrating
 
 ```sh
-git clone --separate-git-dir=$HOME/.dots /path/to/repo $HOME/dots-tmp
-cp ~/dots-tmp/.gitmodules ~  # If you use Git submodules
-rm -r ~/dots-tmp/
-alias config='/usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME'
+curl -Ls https://gist.github.com/mfaerevaag/6f81eb5aab8412dc1e5d1698d6abfb04/raw/ | /bin/bash
 ```
 
-Also see [`bin/dots-import.sh`](bin/dots-import.sh).
+See [`dots-import.sh`](https://gist.github.com/mfaerevaag/6f81eb5aab8412dc1e5d1698d6abfb04).
