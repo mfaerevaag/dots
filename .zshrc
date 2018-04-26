@@ -48,15 +48,6 @@ zplug "zsh-users/zsh-syntax-highlighting", from:github, \
 zplug "zsh-users/zsh-autosuggestions", from:github, \
       if:"[[ $TERM != 'dumb' ]]"
 
-# grab the binary of fzf-bin version 0.11.0 from GitHub Release and uses
-# the file that matches "*darwin*amd64" as a command called fzf!
-zplug "junegunn/fzf-bin", \
-      from:gh-r, \
-      at:0.11.0, \
-      as:command, \
-      use:"*darwin*amd64*", \
-      rename-to:fzf
-
 # notify when a long running command exit
 zplug "marzocchi/zsh-notify", from:github
 
