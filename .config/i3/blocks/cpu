@@ -1,34 +1,13 @@
 #!/usr/bin/bash
 
 main() {
-    # load
-    read cpu a b c previdle rest < /proc/stat
-    prevtotal=$((a+b+c+previdle))
-
-    sleep 0.5
-
-    read cpu a b c idle rest < /proc/stat
-    total=$((a+b+c+idle))
-
-    cpu="$((100*( (total-prevtotal) - (idle-previdle) ) / (total-prevtotal) ))"
-
-    # temp
-    local temp=$(sensors | awk '/temp1/ { print $2 }')
-    temp=${temp:1}
-    temp=${temp%????}
+    local cpu=$(top -bn1 | grep "Cpu(s)" | \
+                    sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | \
+                    awk '{print 100 - $1"%"}')
 
     # format
     local prefix="<span font='FontAwesome'>\uf2db</span> "
 
-    if (( $temp > 80 )); then
-        BG=$RED
-        FG=$BLA
-    elif (( $temp > 70 )); then
-        BG=$YEL
-        FG=$BLA
-    fi
-
-    # format
     if (( $cpu > 90 )); then
         BG=$RED
         FG=$BLA
@@ -37,7 +16,7 @@ main() {
         FG=$BLA
     fi
 
-    local value="${cpu}% ${temp}°C"
+    local value="${cpu}"
 
     # draw
     local before="<span color='${BG}' bgcolor='${BLA}'></span>"
