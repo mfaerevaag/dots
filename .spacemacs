@@ -57,11 +57,11 @@ values."
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
-     (mu4e :variables
-           mu4e-enable-notifications t
-           mu4e-enable-mode-line t
-           mu4e-use-maildirs-extension t
-           mu4e-compose-dont-reply-to-self t)
+     ;; (mu4e :variables
+     ;;       mu4e-enable-notifications t
+     ;;       mu4e-enable-mode-line t
+     ;;       mu4e-use-maildirs-extension t
+     ;;       mu4e-compose-dont-reply-to-self t)
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -353,49 +353,49 @@ you should place your code here."
   (setq c-basic-offset 4)
 
   ;; mu4e
-  (setq mu4e-maildir "~/mail"
-        mu4e-get-mail-command "mbsync -a"
-        mu4e-update-interval nil
-        mu4e-compose-signature-auto-include t
-        mu4e-view-show-images t
-        mu4e-view-show-addresses t
-        mu4e-attachment-dir "~/down"
-        message-send-mail-function 'smtpmail-send-it
-        smtpmail-smtp-service 587
-        smtpmail-stream-type 'starttls
-        )
+  ;; (setq mu4e-maildir "~/mail"
+  ;;       mu4e-get-mail-command "mbsync -a"
+  ;;       mu4e-update-interval nil
+  ;;       mu4e-compose-signature-auto-include t
+  ;;       mu4e-view-show-images t
+  ;;       mu4e-view-show-addresses t
+  ;;       mu4e-attachment-dir "~/down"
+  ;;       message-send-mail-function 'smtpmail-send-it
+  ;;       smtpmail-smtp-service 587
+  ;;       smtpmail-stream-type 'starttls
+  ;;       )
 
 
-  ;; mail directory shortcuts
-  (setq mu4e-maildir-shortcuts
-        '(("/faerevaag/INBOX" . ?g)))
+  ;; ;; mail directory shortcuts
+  ;; (setq mu4e-maildir-shortcuts
+  ;;       '(("/faerevaag/INBOX" . ?g)))
 
-  ;; auto sign
-  (add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime)
+  ;; ;; auto sign
+  ;; (add-hook 'message-send-hook 'mml-secure-message-sign-pgpmime)
 
-  (require 'mu4e) ; hmm
+  ;; (require 'mu4e) ; hmm
 
-  (setq mu4e-contexts
-        `( ,(make-mu4e-context
-             :name "Faerevaag"
-             :enter-func (lambda () (mu4e-message "Switched to Faerevaag context"))
-             :match-func (lambda (msg)
-                           (when msg
-                             (string-match-p "^/Faerevaag" (mu4e-message-field msg :maildir))))
-             :vars '( (user-mail-address            . "markus@faerevaag.no")
-                      (user-full-name               . "Markus Færevaag")
-                      (mu4e-drafts-folder           . "/faerevaag/Drafts")
-                      (mu4e-sent-folder             . "/faerevaag/Sent Items")
-                      (mu4e-trash-folder            . "/faerevaag/Trash")
-                      (mu4e-refile-folder           . "/faerevaag/Archive")
-                      (mu4e-sent-messages-behavior  . sent)
-                      (smtpmail-default-smtp-server . "smtp.faerevaag.no")
-                      (smtpmail-smtp-server         . "smtp.faerevaag.no")
-                      (mu4e-compose-signature . (with-temp-buffer
-                                                  (insert-file-contents "~/docs/sign/faerevaag")
-                                                  (buffer-string)))
-                      ))
-           ))
+  ;; (setq mu4e-contexts
+  ;;       `( ,(make-mu4e-context
+  ;;            :name "Faerevaag"
+  ;;            :enter-func (lambda () (mu4e-message "Switched to Faerevaag context"))
+  ;;            :match-func (lambda (msg)
+  ;;                          (when msg
+  ;;                            (string-match-p "^/Faerevaag" (mu4e-message-field msg :maildir))))
+  ;;            :vars '( (user-mail-address            . "markus@faerevaag.no")
+  ;;                     (user-full-name               . "Markus Færevaag")
+  ;;                     (mu4e-drafts-folder           . "/faerevaag/Drafts")
+  ;;                     (mu4e-sent-folder             . "/faerevaag/Sent Items")
+  ;;                     (mu4e-trash-folder            . "/faerevaag/Trash")
+  ;;                     (mu4e-refile-folder           . "/faerevaag/Archive")
+  ;;                     (mu4e-sent-messages-behavior  . sent)
+  ;;                     (smtpmail-default-smtp-server . "smtp.faerevaag.no")
+  ;;                     (smtpmail-smtp-server         . "smtp.faerevaag.no")
+  ;;                     (mu4e-compose-signature . (with-temp-buffer
+  ;;                                                 (insert-file-contents "~/docs/sign/faerevaag")
+  ;;                                                 (buffer-string)))
+  ;;                     ))
+  ;;          ))
 
   ;; notifications
   ;; (with-eval-after-load 'mu4e-alert
