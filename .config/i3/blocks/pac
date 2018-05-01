@@ -6,10 +6,11 @@
 
 main() {
     # collect
-    local prefix="<span font='FontAwesome'>\uf17c</span> "
     local value="$(pacman -Qu | wc -l)"
 
     # format
+    local prefix="<span font='FontAwesome'>\uf17c</span> "
+
     if (( "$value" > 10 )); then
         FG=$BLA
         BG=$RED

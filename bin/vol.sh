@@ -6,7 +6,7 @@ signal() {
 }
 
 # change after your setup
-CARD='0'
+CARD='2'
 CHANNELS="Master Front Surround Center LFE"
 
 # get "muted" or "unmuted"
