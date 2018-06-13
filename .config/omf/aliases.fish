@@ -1,6 +1,3 @@
-# .dotfile
-# fish - aliases
-
 function rm
   command rm -i $argv
 end
