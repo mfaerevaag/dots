@@ -2,6 +2,10 @@ function rm
     command rm -i $argv
 end
 
+function less
+    command less -i
+end
+
 function sd
     sudo systemctl $argv
 end
