@@ -9,59 +9,10 @@ servers = (
     ssl_capath = "/etc/ssl/certs";
     autoconnect = "no";
   },
-  {
-    address = "irc.smashthestack.org";
-    chatnet = "sts";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.anonops.com";
-    chatnet = "anonops";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.mozilla.org";
-    chatnet = "mozilla";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "no";
-    autoconnect = "no";
-  },
-  {
-    address = "irc.hackthissite.org";
-    chatnet = "hts";
-    port = "7000";
-    use_ssl = "yes";
-    ssl_verify = "no";
-    autoconnect = "no";
-  }
 );
 
 chatnets = {
   fn = {
-    type = "IRC";
-    nick = "slevin";
-  };
-  sts = {
-    type = "IRC";
-    nick = "slevin";
-    autosendcmd = "/msg nickserv identify S2m2L.kjas.; wait 2000";
-  };
-  anonops = {
-    type = "IRC";
-    nick = "seven";
-  };
-  mozilla = {
-    type = "IRC";
-    nick = "slevin";
-  };
-  hts = {
     type = "IRC";
     nick = "slevin";
   };
@@ -232,13 +183,13 @@ statusbar = {
 };
 
 settings = {
-  core = { 
+  core = {
     real_name = "unknown";
     user_name = "unknown";
     nick = "slevin";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "fe-common/core" = { 
+  "fe-common/core" = {
     theme = "themes/solarized";
     hilight_color = "= %R";
   };
