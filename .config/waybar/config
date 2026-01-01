@@ -1,0 +1,140 @@
+[
+    {
+        "output": "DP-1",
+        "layer": "top",
+        "position": "top",
+        "height": 24,
+        "spacing": 0,
+
+        "modules-left": [
+            "sway/workspaces",
+            "sway/mode",
+            "sway/window"
+        ],
+        "modules-center": ["clock"],
+        "modules-right": [
+            "custom/pacman",
+            "network#eth",
+            "disk",
+            "memory",
+            "cpu",
+            "temperature",
+            "custom/keyboard",
+            "pulseaudio",
+            "tray"
+        ],
+
+        "sway/workspaces": {
+            "disable-scroll": true,
+            "all-outputs": true,
+            "format": "{name}",
+            "strip-workspace-numbers": true
+        },
+
+        "sway/mode": {
+            "format": " {} "
+        },
+
+        "sway/window": {
+            "max-length": 50
+        },
+
+        "clock": {
+            "format": "{:%d/%m %H:%M:%S}",
+            "interval": 1,
+            "tooltip-format": "{:%A, %B %d, %Y}"
+        },
+
+        "custom/keyboard": {
+            "exec": "swaymsg -t get_inputs -r | jq -r 'first(.[] | select(.type == \"keyboard\") | .xkb_active_layout_name) // \"?\"' | while read layout; do case \"$layout\" in *English*|*US*|*us*) echo '{\"text\": \"en\", \"class\": \"en\"}' ;; *Norwegian*|*Norsk*|*no*) echo '{\"text\": \"no\", \"class\": \"alt\"}' ;; *) echo '{\"text\": \"??\", \"class\": \"alt\"}' ;; esac; done",
+            "return-type": "json",
+            "interval": 1,
+            "format": "\uf11c {}",
+            "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
+        },
+
+        "cpu": {
+            "format": "\uf2db {usage}%",
+            "interval": 2,
+            "states": {
+                "warning": 75,
+                "critical": 90
+            }
+        },
+
+        "memory": {
+            "format": "\uf538 {percentage}%",
+            "interval": 2,
+            "states": {
+                "warning": 50,
+                "critical": 90
+            }
+        },
+
+        "temperature": {
+            "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+            "format": "\uf2cb {temperatureC}°C",
+            "critical-threshold": 80,
+            "warning-threshold": 60
+        },
+
+        "disk": {
+            "path": "/",
+            "format": "\uf1c0 {percentage_used}%",
+            "states": {
+                "warning": 90,
+                "critical": 95
+            }
+        },
+
+        "pulseaudio": {
+            "format": "\uf027 {volume}%",
+            "format-muted": "\uf6a9",
+            "on-click": "vol_pulse.sh toggle",
+            "on-scroll-up": "vol_pulse.sh + 5",
+            "on-scroll-down": "vol_pulse.sh - 5"
+        },
+
+        "network#eth": {
+            "interface": "enp5s0",
+            "format-ethernet": "\uf6ff {ipaddr}",
+            "format-disconnected": "",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+        },
+
+        "custom/pacman": {
+            "exec": "pacman -Qu 2>/dev/null | wc -l",
+            "interval": 3600,
+            "format": "\uf1b3 {}",
+            "exec-if": "exit 0"
+        },
+
+        "tray": {
+            "icon-size": 16,
+            "spacing": 8
+        }
+    },
+
+    {
+        "output": ["HDMI-A-1", "DVI-D-1"],
+        "layer": "top",
+        "position": "top",
+        "height": 23,
+        "spacing": 0,
+
+        "modules-left": ["sway/workspaces", "sway/mode"],
+        "modules-center": [],
+        "modules-right": [],
+
+        "sway/workspaces": {
+            "disable-scroll": true,
+            "all-outputs": true,
+            "format": "{name}",
+            "strip-workspace-numbers": true
+        },
+
+        "sway/mode": {
+            "format": " {} "
+        }
+    }
+]

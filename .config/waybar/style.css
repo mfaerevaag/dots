@@ -1,0 +1,130 @@
+/* Waybar style */
+
+/* Color scheme */
+@define-color bg #111111;
+@define-color fg #aaaaaa;
+@define-color module #222222;
+@define-color red #e5786d;
+@define-color yellow #ffe161;
+@define-color green #cae682;
+@define-color blue #5283d7;
+@define-color magenta #b698d9;
+
+/* Reset */
+* {
+    font-family: monospace;
+    font-size: 10pt;
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 0;
+}
+
+/* Bar */
+window#waybar {
+    background-color: @bg;
+    color: @fg;
+}
+
+/* Workspaces */
+#workspaces {
+    background-color: @module;
+}
+
+#workspaces button {
+    padding: 0 6px;
+    margin: 0 2px;
+    background-color: transparent;
+    color: @fg;
+    border: 1px solid alpha(@fg, 0.3);
+    border-radius: 1px;
+}
+
+#workspaces button:hover {
+    background-color: alpha(@fg, 0.2);
+}
+
+#workspaces button.focused {
+    background-color: @blue;
+    color: @bg;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @bg;
+}
+
+/* Mode indicator */
+#mode {
+    background-color: @yellow;
+    color: @bg;
+    padding: 0 8px;
+}
+
+/* Window title */
+#window {
+    padding: 0 8px;
+}
+
+/* Clock - centered */
+#clock {
+    background-color: transparent;
+    color: @fg;
+    padding: 0 8px;
+}
+
+/* Right-side modules */
+#custom-pacman,
+#network,
+#disk,
+#memory,
+#cpu,
+#temperature,
+#custom-keyboard,
+#pulseaudio {
+    background-color: @bg;
+    color: @fg;
+    padding: 0 8px;
+    margin: 0 2px;
+}
+
+/* Tray */
+#tray {
+    padding: 0 8px;
+}
+
+/* Keyboard - purple when not English */
+#custom-keyboard.alt {
+    background-color: @magenta;
+    color: @bg;
+}
+
+/* Warning states (yellow) */
+#cpu.warning,
+#memory.warning,
+#disk.warning,
+#pulseaudio.muted {
+    background-color: @yellow;
+    color: @bg;
+}
+
+/* Critical states (red) */
+#cpu.critical,
+#memory.critical,
+#disk.critical,
+#temperature.critical,
+#network.disconnected {
+    background-color: @red;
+    color: @bg;
+}
+
+/* Tooltip */
+tooltip {
+    background-color: @bg;
+    border: 1px solid @fg;
+}
+
+tooltip label {
+    color: @fg;
+}
