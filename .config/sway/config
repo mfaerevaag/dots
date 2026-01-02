@@ -86,7 +86,8 @@ workspace_auto_back_and_forth yes
 floating_modifier $mod
 
 # Floating windows
-for_window [class="Chromium" instance="crx_nngceckbapebfimnlniiiahkandclblb" window_role="pop-up"] floating enable
+for_window [app_id="chrome-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable # bitwarden extention
+for_window [class="Pinentry.*"] floating enable, move position center
 
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
@@ -236,6 +237,9 @@ bindsym $mod+r mode "resize"
 # ┌───────────────────────────────────────────────────────────────────────────┐
 # │                             AUTOSTART                                     │
 # └───────────────────────────────────────────────────────────────────────────┘
+
+exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
 
 exec_always mako
 exec_always pkill waybar; waybar
