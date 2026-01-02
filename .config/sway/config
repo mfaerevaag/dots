@@ -1,0 +1,245 @@
+# ╔═══════════════════════════════════════════════════════════════════════════╗
+# ║                              SWAY CONFIG                                  ║
+# ║                         ~/.config/sway/config                             ║
+# ╚═══════════════════════════════════════════════════════════════════════════╝
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                              VARIABLES                                    │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+# Modifier keys
+set $mod Mod4
+set $modAlt Mod1
+
+# Vim-style direction keys
+set $left h
+set $down j
+set $up k
+set $right l
+
+# Workspaces (Chinese numerals)
+set $ws1 "1:一"
+set $ws2 "2:二"
+set $ws3 "3:三"
+set $ws4 "4:四"
+set $ws5 "5:五"
+set $ws6 "6:六"
+set $ws7 "7:七"
+set $ws8 "8:八"
+set $ws9 "9:九"
+set $ws0 "10:十"
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                           OUTPUT / MONITORS                               │
+# └───────────────────────────────────────────────────────────────────────────┘
+# Layout: [HDMI-A-1 portrait] [DP-1 landscape] [DVI-D-1 portrait]
+# To list outputs: swaymsg -t get_outputs
+
+output DVI-D-1 {
+    mode 1920x1200
+    position 3760 0
+    transform 270
+}
+
+output HDMI-A-1 {
+    mode 1920x1200
+    position 0 0
+    transform 90
+}
+
+output DP-1 {
+    mode 2560x1440
+    position 1200 240
+}
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                              INPUT DEVICES                                │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+input type:keyboard {
+    xkb_layout us,no
+    xkb_options ctrl:nocaps,grp:alt_shift_toggle
+    repeat_delay 250
+    repeat_rate 30
+}
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                              APPEARANCE                                   │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+font pango:Hack 10
+default_border pixel 2
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                            WINDOW BEHAVIOR                                │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+# Auto jump back to previous workspace when switching to current
+workspace_auto_back_and_forth yes
+
+# Hold mod to drag floating windows
+floating_modifier $mod
+
+# Floating windows
+for_window [app_id="chrome-nngceckbapebfimnlniiiahkandclblb-Default"] floating enable # bitwarden extention
+for_window [class="Pinentry.*"] floating enable, move position center
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                          WORKSPACE ASSIGNMENT                             │
+# └───────────────────────────────────────────────────────────────────────────┘
+# Assign workspaces to outputs (uncomment and adjust as needed)
+# workspace $ws2 output DVI-D-1
+# workspace $ws9 output DP-1
+
+# Assign applications to workspaces (uncomment and adjust as needed)
+# assign [class="^Firefox$"] $ws1
+# assign [class="^Emacs$"] $ws3
+# assign [class="Spotify" instance="Spotify"] $ws7
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                           KEY BINDINGS: APPS                              │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+# Terminal
+bindsym $mod+Return exec alacritty
+
+# Launcher
+bindsym $mod+x exec rofi -show run
+
+# Screenshot
+bindsym --release Print exec grim -g "$(slurp)" - | swappy -f -
+
+# Password
+bindsym $mod+p exec rofi-rbw \
+    --selector rofi \
+    --clipboarder wl-copy \
+    --typer wtype
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                          KEY BINDINGS: MEDIA                              │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+bindsym $mod+period exec ~/bin/vol_pulse.sh + 10
+bindsym $mod+comma exec ~/bin/vol_pulse.sh - 10
+bindsym $mod+m exec ~/bin/vol_pulse.sh toggle
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                        KEY BINDINGS: SESSION                              │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+bindsym $mod+Shift+w kill
+bindsym $mod+Shift+e reload
+#set $swaycmd sway --unsupported-gpu -c ~/.config/sway/config
+#bindsym $mod+Shift+r exec $swaycmd
+bindsym $mod+Shift+q exec "swaynag -t warning -m 'Exit sway?' -b 'Exit' 'swaymsg exit'"
+bindsym $mod+Shift+b exec pkill -SIGUSR2 waybar
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                      KEY BINDINGS: NAVIGATION                             │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+# Focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# Move window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+# Move workspace between outputs
+bindsym $mod+Shift+Ctrl+$left move workspace to output left
+bindsym $mod+Shift+Ctrl+$down move workspace to output down
+bindsym $mod+Shift+Ctrl+$up move workspace to output up
+bindsym $mod+Shift+Ctrl+$right move workspace to output right
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                        KEY BINDINGS: LAYOUT                               │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+bindsym $mod+c split h
+bindsym $mod+v split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Shift+space floating toggle
+bindsym $mod+space focus mode_toggle
+bindsym $mod+a focus parent
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                           SCRATCHPAD                                      │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                           WORKSPACES                                      │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+# Switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# Move container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                            RESIZE MODE                                    │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+mode "resize" {
+    bindsym $left resize shrink width 10 px or 10 ppt
+    bindsym $down resize grow height 10 px or 10 ppt
+    bindsym $up resize shrink height 10 px or 10 ppt
+    bindsym $right resize grow width 10 px or 10 ppt
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+
+# ┌───────────────────────────────────────────────────────────────────────────┐
+# │                             AUTOSTART                                     │
+# └───────────────────────────────────────────────────────────────────────────┘
+
+exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
+
+exec_always mako
+exec_always pkill waybar; waybar
