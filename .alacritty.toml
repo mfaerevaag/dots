@@ -1,0 +1,44 @@
+# dots/.alacritty.toml
+# @mfaerevaag
+
+# general
+
+[font]
+size = 10
+
+[font.normal]
+family = "Source Code Pro"
+
+#[[keyboard.bindings]]
+#key = "V"
+#mods = "Control|Shift"
+#action = "Paste"
+
+[selection]
+save_to_clipboard = true
+
+# theme: wombat
+
+[colors.bright]
+black = "#b4b4b4"
+blue = "#b3d2ff"
+cyan = "#c2fefa"
+green = "#e3f7a1"
+magenta = "#e5bdff"
+red = "#f99f92"
+white = "#ffffff"
+yellow = "#f2e9bf"
+
+[colors.normal]
+black = "#000000"
+blue = "#6ebaf8"
+cyan = "#90fdf8"
+green = "#bde97c"
+magenta = "#ef88ff"
+red = "#f7786d"
+white = "#e5e1d8"
+yellow = "#efdfac"
+
+[colors.primary]
+background = "#1f1f1f"
+foreground = "#e5e1d8"
