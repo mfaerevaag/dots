@@ -18,8 +18,9 @@ URxvt.lineSpace:            0
 
 !! Fonts
 !URxvt.allow_bold:          true
+!urxvt.font:                 xft:DejaVu Sans Mono:pixelsize=13
 urxvt.font:                 xft:DejaVu Sans Mono for Powerline:pixelsize=13
-! emacs.font:                 DejaVu Sans Mono 9
+!emacs.font:                 DejaVu Sans Mono 9
 
 !! Fix font space
 URxvt.letterSpace:          -1
@@ -29,7 +30,7 @@ URxvt.scrollStyle:          rxvt
 URxvt.scrollBar:            false
 
 !! Perl extensions
-URxvt.perl-ext-common:      default,matcher,clipboard,font-size
+URxvt.perl-ext-common:      default,matcher,clipboard,font-size,selection-to-clipboard
 URxvt.matcher.button:       1
 URxvt.urlLauncher:          firefox
 
@@ -47,15 +48,15 @@ URxvt.cursorUnderline:      false
 URxvt.pointerBlank:         true
 
 !! man pages
-URxvt.colorIT:      #87af5f
-URxvt.colorBD:      #d7d7d7
-URxvt.colorUL:      #87afd7
+URxvt.colorIT:              #87af5f
+URxvt.colorBD:              #d7d7d7
+URxvt.colorUL:              #87afd7
 
 !! font-size bindings
-URxvt.font-step:    10
-URxvt.keysym.C-Up:     perl:font-size:increase
-URxvt.keysym.C-Down:   perl:font-size:decrease
-URxvt.keysym.C-S-Up:   perl:font-size:incglobal
-URxvt.keysym.C-S-Down: perl:font-size:decglobal
-URxvt.keysym.C-equal:  perl:font-size:reset
-URxvt.keysym.C-slash:  perl:font-size:show
+URxvt.font-step:            10
+URxvt.keysym.C-Up:          perl:font-size:increase
+URxvt.keysym.C-Down:        perl:font-size:decrease
+URxvt.keysym.C-S-Up:        perl:font-size:incglobal
+URxvt.keysym.C-S-Down:      perl:font-size:decglobal
+URxvt.keysym.C-equal:       perl:font-size:reset
+URxvt.keysym.C-slash:       perl:font-size:show

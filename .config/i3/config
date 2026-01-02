@@ -2,16 +2,16 @@
 # i3/config
 
 # workspaces
-set $ws1 "1:일"
-set $ws2 "2:이"
-set $ws3 "3:삼"
-set $ws4 "4:사"
-set $ws5 "5:오"
-set $ws6 "6:육"
-set $ws7 "7:칠"
-set $ws8 "8:팔"
-set $ws9 "9:구"
-set $ws0 "10:십"
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws0 "10"
 
 # keys
 set $mod Mod4
@@ -34,8 +34,8 @@ for_window [class="^.*"] border pixel 2
 new_window pixel 2
 
 # i3-gaps
-smart_gaps on
-smart_borders on
+# smart_gaps on
+# smart_borders on
 
 # auto jump back to previous workspace
 workspace_auto_back_and_forth yes
@@ -46,20 +46,7 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec urxvt
 # start dmenu
-bindsym $mod+x exec dmenu_run
-# lock
-bindsym --release $mod+Shift+o exec sxlock
-# volume
-bindsym $mod+period exec "vol.sh + 8"
-bindsym $mod+comma exec "vol.sh - 8"
-bindsym $mod+m exec "vol.sh toggle"
-
-# assign client to specific workspaces
-# assign [class="^Firefox$"] → $ws1
-assign [class="^Emacs$"] → $ws3
-assign [class="Spotify" instance="Spotify"] → $ws7
-assign [class="^Pidgin$"] → $ws9
-assign [class="^Thunderbird$"] → $ws0
+bindsym $mod+x exec dmenu_run -i
 
 # kill focused window
 bindsym $mod+Shift+w kill
@@ -157,19 +144,5 @@ bindsym $mod+r mode "resize"
 
 # status bar
 bar {
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-
-    strip_workspace_numbers yes
-    # font pango:DejaVu Sans Mono 10
-    font xft:DejaVu Sans Mono for Powerline 10
-
-    # position top
-    height 20
-    colors {
-        background #222222
-        focused_workspace  #4c7899 #5283d7 #ffffff
-        urgent_workspace  #4c7899 #e5786d #ffffff
-    }
+    status_command i3status
 }
-
-exec ~/bin/post-wm.sh

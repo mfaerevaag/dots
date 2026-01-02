@@ -1,17 +1,13 @@
 [user]
 	name = Markus Faerevaag
 	email = m@frv.ag
-	signingkey = D2F12E29
 [github]
 	user = mfaerevaag
-	token = token
 [core]
-	editor = emc
+	editor = vi
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	excludesfile = ~/.gitignore
 	pager = less -r
-[web]
-	browser = firefox
 [push]
 	default = matching
 [color]
