@@ -25,7 +25,6 @@
         ],
 
         "sway/workspaces": {
-            "disable-scroll": true,
             "all-outputs": true,
             "format": "{name}",
             "strip-workspace-numbers": true
