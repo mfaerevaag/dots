@@ -37,22 +37,22 @@ set $ws0 "10:十"
 # Layout: [HDMI-A-1 portrait] [DP-1 landscape] [DVI-D-1 portrait]
 # To list outputs: swaymsg -t get_outputs
 
-output DVI-D-1 {
-    mode 1920x1200
-    position 3760 0
-    transform 270
-}
-
-output HDMI-A-1 {
-    mode 1920x1200
-    position 0 0
-    transform 90
-}
-
-output DP-1 {
-    mode 2560x1440
-    position 1200 240
-}
+#output DVI-D-1 {
+#    mode 1920x1200
+#    position 3760 0
+#    transform 270
+#}
+#
+#output HDMI-A-1 {
+#    mode 1920x1200
+#    position 0 0
+#    transform 90
+#}
+#
+#output DP-1 {
+#    mode 2560x1440
+#    position 1200 240
+#}
 
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
@@ -121,6 +121,9 @@ bindsym $mod+p exec rofi-rbw \
     --selector rofi \
     --clipboarder wl-copy \
     --typer wtype
+
+# Lock
+bindsym $mod+Shift+o exec swaylock
 
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
