@@ -4,10 +4,24 @@
 # general
 
 [font]
-size = 10
+size = 10.0
 
 [font.normal]
-family = "Hack"
+family = "Hack Nerd Font Mono"
+style = "Regular"
+
+[font.bold]
+family = "Hack Nerd Font Mono"
+style = "Bold"
+
+[font.italic]
+family = "Hack Nerd Font Mono"
+style = "Italic"
+
+[font.bold_italic]
+family = "Hack Nerd Font Mono"
+style = "Bold Italic"
+
 
 #[[keyboard.bindings]]
 #key = "V"

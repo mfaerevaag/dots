@@ -111,7 +111,8 @@ for_window [class="Pinentry.*"] floating enable, move position center
 bindsym $mod+Return exec alacritty
 
 # Launcher
-bindsym $mod+x exec rofi -show run
+bindsym $mod+x exec rofi -show drun -display-drun '> '
+bindsym $mod+Shift+x exec rofi -show run -display-run '$ '
 
 # Screenshot
 bindsym --release Print exec grim -g "$(slurp)" - | swappy -f -
@@ -125,14 +126,18 @@ bindsym $mod+p exec rofi-rbw \
 # Lock
 bindsym $mod+Shift+o exec swaylock
 
+# Backlight
+bindsym XF86MonBrightnessUp exec --no-startup-id ~/bin/brightness.sh +
+bindsym XF86MonBrightnessDown exec --no-startup-id ~/bin/brightness.sh -
+
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
 # │                          KEY BINDINGS: MEDIA                              │
 # └───────────────────────────────────────────────────────────────────────────┘
 
-bindsym $mod+period exec ~/bin/vol_pulse.sh + 10
-bindsym $mod+comma exec ~/bin/vol_pulse.sh - 10
-bindsym $mod+m exec ~/bin/vol_pulse.sh toggle
+bindsym $mod+period exec ~/bin/vol-pipewire.sh + 10
+bindsym $mod+comma exec ~/bin/vol-pipewire.sh - 10
+bindsym $mod+m exec ~/bin/vol-pipewire.sh toggle
 
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
@@ -241,8 +246,22 @@ bindsym $mod+r mode "resize"
 # │                             AUTOSTART                                     │
 # └───────────────────────────────────────────────────────────────────────────┘
 
+# env
 exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
 exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
 
+# Network
+exec_always --no-startup-id nm-applet
+
+# Bluetooth
+exec_always --no-startup-id blueman-applet
+
+# Notifications
 exec_always mako
-exec_always pkill waybar; waybar
+
+# Background
+exec_always --no-startup-id swaybg -c 111111
+
+# Status bar
+exec_always waybar
+

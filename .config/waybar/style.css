@@ -82,11 +82,12 @@ window#waybar {
 #cpu,
 #temperature,
 #custom-keyboard,
+#battery,
 #pulseaudio {
     background-color: @bg;
     color: @fg;
     padding: 0 8px;
-    margin: 0 2px;
+    margin: 0 5px;
 }
 
 /* Tray */
@@ -104,6 +105,7 @@ window#waybar {
 #cpu.warning,
 #memory.warning,
 #disk.warning,
+#battery.warning,
 #pulseaudio.muted {
     background-color: @yellow;
     color: @bg;
@@ -114,6 +116,7 @@ window#waybar {
 #memory.critical,
 #disk.critical,
 #temperature.critical,
+#battery.critical,
 #network.disconnected {
     background-color: @red;
     color: @bg;

@@ -1,0 +1,49 @@
+* {
+    bg: #111111;
+    bg-alt: #1a1a1a;
+    fg: #e6e6e6;
+    fg-alt: #888888;
+    accent: #5e81ac;
+
+    background-color: transparent;
+    text-color: @fg;
+}
+
+window {
+    background-color: @bg;
+    border: 2px;
+    border-color: @accent;
+    border-radius: 4px;
+    width: 30%;
+}
+
+mainbox {
+    padding: 10px;
+}
+
+listview {
+    spacing: 4px;
+}
+
+element {
+    padding: 6px;
+}
+
+element normal.normal {
+    background-color: transparent;
+}
+
+element selected.normal {
+    background-color: @bg-alt;
+    text-color: @accent;
+}
+
+prompt {
+    text-color: @accent;
+    padding-right: 10px;
+}
+
+inputbar {
+    padding: 6px;
+    background-color: @bg-alt;
+}

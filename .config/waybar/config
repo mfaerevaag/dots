@@ -13,7 +13,7 @@
         ],
         "modules-center": ["clock"],
         "modules-right": [
-            "custom/pacman",
+            "custom/apt",
             "network#eth",
             "disk",
             "memory",
@@ -21,6 +21,7 @@
             "temperature",
             "custom/keyboard",
             "pulseaudio",
+            "battery",
             "tray"
         ],
 
@@ -88,11 +89,12 @@
         },
 
         "pulseaudio": {
+            "signal": 1,
             "format": "\uf027 {volume}%",
             "format-muted": "\uf6a9",
-            "on-click": "vol_pulse.sh toggle",
-            "on-scroll-up": "vol_pulse.sh + 5",
-            "on-scroll-down": "vol_pulse.sh - 5"
+            "on-click": "vol-pipewire.sh toggle",
+            "on-scroll-up": "vol-pipewire.sh + 5",
+            "on-scroll-down": "vol-pipewire.sh - 5"
         },
 
         "network#eth": {
@@ -102,39 +104,35 @@
             "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
         },
 
-        "custom/pacman": {
-            "exec": "pacman -Qu 2>/dev/null | wc -l",
+        "custom/apt": {
+            "exec": "apt list --upgradeable 2>/dev/null | grep -v Listing | wc -l",
             "interval": 3600,
             "format": "\uf1b3 {}",
             "exec-if": "exit 0"
         },
 
+        "battery": {
+            "bat": "BAT0",
+            "interval": 30,
+
+            "states": {
+                "warning": 25,
+                "critical": 10
+            },
+
+            "format": "\uf242 {capacity}%",
+            "format-full": "\uf240 {capacity}%",
+            "format-warning": "\uf244 {capacity}%",
+            "format-critical": "\uf244 {capacity}%",
+            "format-charging": "\uf1e6 {capacity}%",
+            "format-plugged": "\uf1e6 {capacity}%",
+
+            "tooltip-format": "{timeTo} ({power}W)"
+        },
+
         "tray": {
             "icon-size": 16,
             "spacing": 8
-        }
-    },
-
-    {
-        "output": ["HDMI-A-1", "DVI-D-1"],
-        "layer": "top",
-        "position": "top",
-        "height": 23,
-        "spacing": 0,
-
-        "modules-left": ["sway/workspaces", "sway/mode"],
-        "modules-center": [],
-        "modules-right": [],
-
-        "sway/workspaces": {
-            "disable-scroll": true,
-            "all-outputs": true,
-            "format": "{name}",
-            "strip-workspace-numbers": true
-        },
-
-        "sway/mode": {
-            "format": " {} "
         }
     }
 ]
