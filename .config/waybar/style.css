@@ -86,7 +86,7 @@ window#waybar {
     background-color: @bg;
     color: @fg;
     padding: 0 8px;
-    margin: 0 2px;
+    margin: 0 6px;
 }
 
 /* Tray */

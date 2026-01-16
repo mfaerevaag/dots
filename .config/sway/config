@@ -3,6 +3,7 @@
 # ║                         ~/.config/sway/config                             ║
 # ╚═══════════════════════════════════════════════════════════════════════════╝
 
+include /etc/sway/config.d/*
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
 # │                              VARIABLES                                    │
@@ -112,7 +113,8 @@ for_window [app_id="xdg-desktop-portal-gtk"] floating enable, move position cent
 bindsym $mod+Return exec alacritty
 
 # Launcher
-bindsym $mod+x exec rofi -show drun
+bindsym $mod+x exec rofi -show drun -display-drun '> '
+bindsym $mod+Shift+x exec rofi -show run -display-run '$ '
 
 # Screenshot
 bindsym --release Print exec grim -g "$(slurp)" - | swappy -f -
@@ -244,6 +246,4 @@ exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CUR
 exec_always systemctl --user restart xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 
 exec_always mako
-exec_always pkill waybar; waybar
-
-include /etc/sway/config.d/*
+exec_always waybar
