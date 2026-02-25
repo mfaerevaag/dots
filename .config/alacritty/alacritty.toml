@@ -9,13 +9,18 @@ size = 10
 [font.normal]
 family = "Source Code Pro"
 
+[selection]
+save_to_clipboard = true
+
 #[[keyboard.bindings]]
 #key = "V"
 #mods = "Control|Shift"
 #action = "Paste"
 
-[selection]
-save_to_clipboard = true
+[[keyboard.bindings]]
+key = "Return"
+mods = "Shift"
+chars = "\u001b\r"
 
 # theme: wombat
 

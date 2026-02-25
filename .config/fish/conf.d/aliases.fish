@@ -1,5 +1,6 @@
 function rm
-  command rm -i $argv
+  #command rm -i $argv
+  command trash $argv
 end
 
 function sd
@@ -19,7 +20,7 @@ function y
 end
 
 function cb
-    command xclip -selection c
+    command wl-copy
 end
 
 function dots

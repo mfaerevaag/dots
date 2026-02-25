@@ -44,7 +44,7 @@ output DVI-D-1 {
     transform 270
 }
 
-output HDMI-A-1 {
+output HDMI-A-3 {
     mode 1920x1200
     position 0 0
     transform 90
@@ -246,4 +246,4 @@ exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CUR
 exec_always systemctl --user restart xdg-desktop-portal xdg-desktop-portal-gtk xdg-desktop-portal-wlr
 
 exec_always mako
-exec_always waybar
+exec_always pkill waybar; waybar

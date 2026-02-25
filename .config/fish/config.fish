@@ -7,6 +7,8 @@
 fish_add_path -m ~/.cargo/bin
 
 # env
+set -x EDITOR vim
+set -x BROWSER chromium
 set -x XDG_CURRENT_DESKTOP sway
 set -x XDG_SESSION_DESKTOP sway
 set -x XDG_SESSION_TYPE wayland

@@ -104,6 +104,7 @@ window#waybar {
 #cpu.warning,
 #memory.warning,
 #disk.warning,
+#temperature.warning,
 #pulseaudio.muted {
     background-color: @yellow;
     color: @bg;

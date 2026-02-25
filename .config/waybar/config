@@ -73,8 +73,8 @@
         "temperature": {
             "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
             "format": "\uf2cb {temperatureC}°C",
-            "critical-threshold": 80,
-            "warning-threshold": 60
+            "critical-threshold": 90,
+            "warning-threshold": 80
         },
 
         "disk": {
@@ -115,7 +115,7 @@
     },
 
     {
-        "output": ["HDMI-A-1", "DVI-D-1"],
+        "output": ["HDMI-A-3", "DVI-D-1"],
         "layer": "top",
         "position": "top",
         "height": 23,
