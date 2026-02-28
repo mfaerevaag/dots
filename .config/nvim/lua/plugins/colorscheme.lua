@@ -1,14 +1,10 @@
 return {
   {
-    'folke/tokyonight.nvim',
+    'ViViDboarder/wombat.nvim',
+    dependencies = { 'rktjmp/lush.nvim' },
     priority = 1000,
     config = function()
-      require('tokyonight').setup({
-        styles = {
-          comments = { italic = false },
-        },
-      })
-      vim.cmd.colorscheme('tokyonight-night')
+      vim.cmd.colorscheme('wombat_lush')
     end,
   },
 }

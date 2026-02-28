@@ -1,0 +1,39 @@
+daemonize
+ignore-empty-password
+show-failed-attempts
+
+color=111111
+
+# Ring
+ring-color=333333
+ring-ver-color=cae682
+ring-wrong-color=e5786d
+ring-clear-color=ffe161
+
+# Inside the ring
+inside-color=1a1a1a
+inside-ver-color=1a1a1a
+inside-wrong-color=1a1a1a
+inside-clear-color=1a1a1a
+
+# Key highlight (brief flash on keypress)
+key-hl-color=5e81ac
+bs-hl-color=e5786d
+
+# Separator between ring and inside
+separator-color=222222
+
+# Text
+text-color=aaaaaa
+text-ver-color=cae682
+text-wrong-color=e5786d
+text-clear-color=ffe161
+
+# Line (between inside and ring)
+line-color=111111
+line-ver-color=111111
+line-wrong-color=111111
+line-clear-color=111111
+
+# Layout text
+layout-text-color=aaaaaa

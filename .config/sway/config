@@ -8,6 +8,8 @@
 # │                              VARIABLES                                    │
 # └───────────────────────────────────────────────────────────────────────────┘
 
+output * bg #111111 solid_color
+
 # Modifier keys
 set $mod Mod4
 set $modAlt Mod1
@@ -133,17 +135,17 @@ bindsym $mod+p exec rofi-rbw \
 bindsym $mod+Shift+o exec swaylock
 
 # Backlight
-bindsym XF86MonBrightnessUp exec --no-startup-id ~/bin/brightness.sh +
-bindsym XF86MonBrightnessDown exec --no-startup-id ~/bin/brightness.sh -
+bindsym XF86MonBrightnessUp exec brightnessctl set +10%
+bindsym XF86MonBrightnessDown exec brightnessctl set 10%-
 
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
 # │                          KEY BINDINGS: MEDIA                              │
 # └───────────────────────────────────────────────────────────────────────────┘
 
-bindsym $mod+period exec ~/bin/vol-pipewire.sh + 10
-bindsym $mod+comma exec ~/bin/vol-pipewire.sh - 10
-bindsym $mod+m exec ~/bin/vol-pipewire.sh toggle
+bindsym $mod+period exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%+
+bindsym $mod+comma exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 10%-
+bindsym $mod+m exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
 
 
 # ┌───────────────────────────────────────────────────────────────────────────┐
@@ -253,8 +255,8 @@ bindsym $mod+r mode "resize"
 # └───────────────────────────────────────────────────────────────────────────┘
 
 # env
-exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
-exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR
+exec_always systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR GTK_THEME
+exec_always dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_DESKTOP XDG_SESSION_TYPE XDG_RUNTIME_DIR GTK_THEME
 
 # Network
 exec_always --no-startup-id nm-applet

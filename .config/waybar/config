@@ -13,15 +13,16 @@
         ],
         "modules-center": ["clock"],
         "modules-right": [
-            "custom/apt",
-            "network#eth",
+            "custom/pacman",
+            "network#wifi",
             "disk",
             "memory",
             "cpu",
             "temperature",
-            "custom/keyboard",
+            "sway/language",
             "pulseaudio",
             "battery",
+            "power-profiles-daemon",
             "tray"
         ],
 
@@ -46,11 +47,8 @@
             "tooltip-format": "{:%A, %B %d, %Y}"
         },
 
-        "custom/keyboard": {
-            "exec": "swaymsg -t get_inputs -r | jq -r 'first(.[] | select(.type == \"keyboard\") | .xkb_active_layout_name) // \"?\"' | while read layout; do case \"$layout\" in *English*|*US*|*us*) echo '{\"text\": \"en\", \"class\": \"en\"}' ;; *Norwegian*|*Norsk*|*no*) echo '{\"text\": \"no\", \"class\": \"alt\"}' ;; *) echo '{\"text\": \"??\", \"class\": \"alt\"}' ;; esac; done",
-            "return-type": "json",
-            "interval": 1,
-            "format": "\uf11c {}",
+        "sway/language": {
+            "format": "\uf11c {short}",
             "on-click": "swaymsg input type:keyboard xkb_switch_layout next"
         },
 
@@ -97,18 +95,29 @@
             "on-scroll-down": "vol-pipewire.sh - 5"
         },
 
-        "network#eth": {
-            "interface": "enp5s0",
-            "format-ethernet": "\uf6ff {ipaddr}",
-            "format-disconnected": "",
-            "tooltip-format": "{ifname}: {ipaddr}/{cidr}"
+        "network#wifi": {
+            "interface": "wlp1s0",
+            "format-wifi": "\uf1eb  {essid} {signalStrength}%",
+            "format-disconnected": "\uf1eb  -",
+            "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n{essid} ({signalStrength}%)"
         },
 
-        "custom/apt": {
-            "exec": "apt list --upgradeable 2>/dev/null | grep -v Listing | wc -l",
+        "custom/pacman": {
+            "exec": "checkupdates 2>/dev/null | wc -l",
             "interval": 3600,
             "format": "\uf1b3 {}",
-            "exec-if": "exit 0"
+            "exec-if": "checkupdates 2>/dev/null | grep -q ."
+        },
+
+        "power-profiles-daemon": {
+            "format": "{icon}",
+            "tooltip-format": "Profile: {profile}",
+            "format-icons": {
+                "default": "\uf0e7",
+                "performance": "\uf0e7",
+                "balanced": "\uf24e",
+                "power-saver": "\uf06c"
+            }
         },
 
         "battery": {
