@@ -22,10 +22,6 @@ function cb
     command xclip -selection c
 end
 
-function dots
-    command /usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME $argv
-end
-
 function tf
     command terraform $argv
 end
