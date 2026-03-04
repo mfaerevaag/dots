@@ -1,5 +1,5 @@
 function rm
-  command rm -i $argv
+  command trash $argv
 end
 
 function sd
@@ -19,7 +19,11 @@ function y
 end
 
 function cb
-    command xclip -selection c
+    command wl-copy
+end
+
+function dots
+    command /usr/bin/git --git-dir=$HOME/.dots/ --work-tree=$HOME $argv
 end
 
 function tf
