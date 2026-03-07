@@ -8,8 +8,8 @@ function _bind_git_status -d "git status"
 end
 
 function _bind_ls -d "ls current dir"
-    echo 'ls -l'
-    ls -l
+    echo ''
+    ls -lah
     commandline -f repaint
 end
 
@@ -26,8 +26,8 @@ function _bind_git_log -d "git log HEAD"
 end
 
 function fish_user_key_bindings
+    bind \ek _bind_git_status
     bind \el _bind_ls
     bind \eo _bind_ls_hidden
-    bind \ek _bind_git_status
     bind \ei _bind_git_log
 end

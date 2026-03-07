@@ -1,5 +1,4 @@
 function rm
-  #command rm -i $argv
   command trash $argv
 end
 
