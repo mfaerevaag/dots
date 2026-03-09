@@ -117,7 +117,7 @@ bindsym $mod+x exec rofi -show drun -display-drun '> '
 bindsym $mod+Shift+x exec rofi -show run -display-run '$ '
 
 # Screenshot
-bindsym --release Print exec grim -g "$(slurp)" - | swappy -f -
+bindsym --release Print exec grim -g "$(slurp)" - | satty --filename -
 
 # Password
 bindsym $mod+p exec rofi-rbw \
